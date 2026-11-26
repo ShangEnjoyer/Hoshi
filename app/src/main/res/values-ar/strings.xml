@@ -1,0 +1,65 @@
+<resources>
+    <string name="tab_home">الرئيسية</string>
+    <string name="tab_movies">الأفلام</string>
+    <string name="tab_tv">المسلسلات</string>
+    <string name="tab_anime">الأنمي</string>
+    <string name="tab_week">الأسبوع</string>
+    <string name="tab_search">بحث</string>
+    <string name="tab_settings">الإعدادات</string>
+
+    <string name="row_movies_trending">أفلام رائجة</string>
+    <string name="row_movies_upcoming">أفلام تُعرض قريبًا</string>
+    <string name="row_movies_popular">أفلام شائعة</string>
+    <string name="row_movies_top">أفلام الأعلى تقييمًا</string>
+    <string name="row_tv_trending">مسلسلات رائجة</string>
+    <string name="row_tv_airing">مسلسلات قيد العرض</string>
+    <string name="row_tv_popular">مسلسلات شائعة</string>
+    <string name="row_tv_top">مسلسلات الأعلى تقييمًا</string>
+    <string name="row_anime_today">أنمي يُعرض اليوم</string>
+    <string name="row_anime_trending">أنمي رائج</string>
+    <string name="row_anime_popular">أنمي شائع</string>
+    <string name="row_anime_top">أنمي الأعلى تقييمًا</string>
+
+    <string name="msg_loading">جارٍ التحميل…</string>
+    <string name="msg_missing_key">مفتاح واجهة TMDB غير موجود. انتقل إلى تبويب الإعدادات لإدخاله.</string>
+    <string name="msg_load_error">تعذّر تحميل الكتالوج. تحقق من اتصالك بالإنترنت.</string>
+
+    <string name="search_placeholder">ابحث عن أفلام ومسلسلات وأنمي…</string>
+
+    <string name="settings_title">مفتاح واجهة TMDB</string>
+    <string name="settings_help">مطلوب للأفلام والمسلسلات (الأنمي يعمل بدون مفتاح). أنشئ حسابًا مجانيًا على themoviedb.org، ثم انتقل إلى الإعدادات ← API وانسخ \"API Key\" (الإصدار 3).</string>
+    <string name="settings_status_missing">الحالة: لا يوجد مفتاح</string>
+    <string name="settings_status_ok">الحالة: تم حفظ المفتاح</string>
+    <string name="settings_key_placeholder">الصق المفتاح أو اكتبه هنا…</string>
+    <string name="settings_save">حفظ وإعادة تحميل</string>
+    <string name="settings_saved">تم حفظ المفتاح. انتقل إلى الأفلام أو المسلسلات.</string>
+
+    <string name="week_today">اليوم</string>
+    <string name="msg_week_empty">لم يتم العثور على حلقات لهذا الأسبوع.</string>
+
+    <string name="kind_movie">فيلم</string>
+    <string name="kind_tv">مسلسل</string>
+    <string name="kind_anime">أنمي</string>
+    <string name="no_overview">لا يوجد ملخص متاح.</string>
+    <string name="where_to_watch">أين تشاهد</string>
+    <string name="no_platform">لا توجد منصة معروفة بعد.</string>
+    <string name="availability_error">تعذّر الحصول على معلومات التوفر.</string>
+    <string name="searching">جارٍ البحث…</string>
+    <string name="section_stream">اشتراك</string>
+    <string name="section_rent_buy">استئجار / شراء</string>
+    <string name="section_more_links">روابط إضافية</string>
+    <string name="no_link">لا يوجد رابط متاح</string>
+    <string name="no_browser">لا يحتوي هذا التلفاز على متصفح لفتح الرابط.</string>
+    <string name="attribution">البيانات: TMDB (التوفر: JustWatch) وAniList. يستخدم هذا المنتج واجهة TMDB لكنه غير معتمد ولا مُصدَّق من TMDB.</string>
+    <string name="episode_short">الحلقة %1$d · %2$s</string>
+
+    <string name="settings_phone_title">الأسهل: استخدم هاتفك</string>
+    <string name="settings_phone_help">امسح رمز QR، أو افتح العنوان أدناه على هاتف متصل بنفس شبكة Wi-Fi والصق مفتاح TMDB هناك. سيتم حفظه هنا تلقائيًا.</string>
+    <string name="settings_phone_received">تم استلام المفتاح من الهاتف وحفظه. انتقل إلى الأفلام أو المسلسلات.</string>
+    <string name="settings_phone_noip">صِل التلفاز بشبكة Wi-Fi أو الشبكة لاستخدام هاتفك.</string>
+    <string name="phone_page_title">Hoshi · مفتاح TMDB</string>
+    <string name="phone_page_label">الصق مفتاح واجهة TMDB (الإصدار 3)</string>
+    <string name="phone_page_button">إرسال إلى التلفاز</string>
+    <string name="phone_page_ok">تم! أُرسل المفتاح إلى تلفازك. يمكنك إغلاق هذه الصفحة.</string>
+    <string name="phone_page_bad">لا يبدو أن هذا مفتاح صالح (يجب أن يتكون من 32 حرفًا ورقمًا). ارجع وحاول مرة أخرى.</string>
+</resources>

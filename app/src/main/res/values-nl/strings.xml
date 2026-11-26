@@ -1,0 +1,65 @@
+<resources>
+    <string name="tab_home">Home</string>
+    <string name="tab_movies">Films</string>
+    <string name="tab_tv">Series</string>
+    <string name="tab_anime">Anime</string>
+    <string name="tab_week">Week</string>
+    <string name="tab_search">Zoeken</string>
+    <string name="tab_settings">Instellingen</string>
+
+    <string name="row_movies_trending">Trending films</string>
+    <string name="row_movies_upcoming">Binnenkort in de bioscoop</string>
+    <string name="row_movies_popular">Populaire films</string>
+    <string name="row_movies_top">Best beoordeelde films</string>
+    <string name="row_tv_trending">Trending series</string>
+    <string name="row_tv_airing">Series die nu lopen</string>
+    <string name="row_tv_popular">Populaire series</string>
+    <string name="row_tv_top">Best beoordeelde series</string>
+    <string name="row_anime_today">Anime van vandaag</string>
+    <string name="row_anime_trending">Trending anime</string>
+    <string name="row_anime_popular">Populaire anime</string>
+    <string name="row_anime_top">Best beoordeelde anime</string>
+
+    <string name="msg_loading">Laden…</string>
+    <string name="msg_missing_key">De TMDB-API-sleutel ontbreekt. Ga naar het tabblad Instellingen om hem in te voeren.</string>
+    <string name="msg_load_error">De catalogus kon niet worden geladen. Controleer je internetverbinding.</string>
+
+    <string name="search_placeholder">Zoek films, series en anime…</string>
+
+    <string name="settings_title">TMDB-API-sleutel</string>
+    <string name="settings_help">Vereist voor films en series (anime werkt zonder sleutel). Maak een gratis account aan op themoviedb.org, ga naar Instellingen → API en kopieer de \"API Key\" (v3).</string>
+    <string name="settings_status_missing">Status: geen sleutel</string>
+    <string name="settings_status_ok">Status: sleutel opgeslagen</string>
+    <string name="settings_key_placeholder">Plak of typ hier de sleutel…</string>
+    <string name="settings_save">Opslaan en opnieuw laden</string>
+    <string name="settings_saved">Sleutel opgeslagen. Ga naar Films of Series.</string>
+
+    <string name="week_today">vandaag</string>
+    <string name="msg_week_empty">Geen afleveringen gevonden voor deze week.</string>
+
+    <string name="kind_movie">Film</string>
+    <string name="kind_tv">Serie</string>
+    <string name="kind_anime">Anime</string>
+    <string name="no_overview">Geen samenvatting beschikbaar.</string>
+    <string name="where_to_watch">Waar te kijken</string>
+    <string name="no_platform">Nog geen platform bekend.</string>
+    <string name="availability_error">Beschikbaarheid kon niet worden opgehaald.</string>
+    <string name="searching">Zoeken…</string>
+    <string name="section_stream">Abonnement</string>
+    <string name="section_rent_buy">Huren / kopen</string>
+    <string name="section_more_links">Meer links</string>
+    <string name="no_link">Geen link beschikbaar</string>
+    <string name="no_browser">Deze tv heeft geen browser om de link te openen.</string>
+    <string name="attribution">Gegevens: TMDB (beschikbaarheid: JustWatch) en AniList. Dit product gebruikt de TMDB-API, maar wordt niet onderschreven of gecertificeerd door TMDB.</string>
+    <string name="episode_short">Afl. %1$d · %2$s</string>
+
+    <string name="settings_phone_title">Het makkelijkst: gebruik je telefoon</string>
+    <string name="settings_phone_help">Scan de QR-code, of open het onderstaande adres op een telefoon op hetzelfde wifi-netwerk en plak daar je TMDB-sleutel. Hij wordt hier automatisch opgeslagen.</string>
+    <string name="settings_phone_received">Sleutel van je telefoon ontvangen en opgeslagen. Ga naar Films of Series.</string>
+    <string name="settings_phone_noip">Verbind de tv met je wifi of netwerk om je telefoon te gebruiken.</string>
+    <string name="phone_page_title">Hoshi · TMDB-sleutel</string>
+    <string name="phone_page_label">Plak je TMDB-API-sleutel (v3)</string>
+    <string name="phone_page_button">Naar tv sturen</string>
+    <string name="phone_page_ok">Klaar! De sleutel is naar je tv gestuurd. Je kunt deze pagina sluiten.</string>
+    <string name="phone_page_bad">Dit lijkt geen geldige sleutel (hij heeft 32 letters en cijfers). Ga terug en probeer het opnieuw.</string>
+</resources>

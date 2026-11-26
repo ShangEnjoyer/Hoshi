@@ -1,0 +1,65 @@
+<resources>
+    <string name="tab_home">홈</string>
+    <string name="tab_movies">영화</string>
+    <string name="tab_tv">시리즈</string>
+    <string name="tab_anime">애니메이션</string>
+    <string name="tab_week">이번 주</string>
+    <string name="tab_search">검색</string>
+    <string name="tab_settings">설정</string>
+
+    <string name="row_movies_trending">인기 급상승 영화</string>
+    <string name="row_movies_upcoming">개봉 예정 영화</string>
+    <string name="row_movies_popular">인기 영화</string>
+    <string name="row_movies_top">평점 높은 영화</string>
+    <string name="row_tv_trending">인기 급상승 시리즈</string>
+    <string name="row_tv_airing">방영 중인 시리즈</string>
+    <string name="row_tv_popular">인기 시리즈</string>
+    <string name="row_tv_top">평점 높은 시리즈</string>
+    <string name="row_anime_today">오늘 방영하는 애니메이션</string>
+    <string name="row_anime_trending">인기 급상승 애니메이션</string>
+    <string name="row_anime_popular">인기 애니메이션</string>
+    <string name="row_anime_top">평점 높은 애니메이션</string>
+
+    <string name="msg_loading">불러오는 중…</string>
+    <string name="msg_missing_key">TMDB API 키가 없습니다. 설정 탭에서 입력하세요.</string>
+    <string name="msg_load_error">카탈로그를 불러오지 못했습니다. 인터넷 연결을 확인하세요.</string>
+
+    <string name="search_placeholder">영화, 시리즈, 애니메이션 검색…</string>
+
+    <string name="settings_title">TMDB API 키</string>
+    <string name="settings_help">영화와 시리즈에 필요합니다(애니메이션은 키 없이 작동). themoviedb.org에서 무료 계정을 만들고 설정 → API에서 \"API Key\"(v3)를 복사하세요.</string>
+    <string name="settings_status_missing">상태: 키 없음</string>
+    <string name="settings_status_ok">상태: 키 저장됨</string>
+    <string name="settings_key_placeholder">여기에 키를 붙여넣거나 입력하세요…</string>
+    <string name="settings_save">저장 후 새로고침</string>
+    <string name="settings_saved">키가 저장되었습니다. 영화 또는 시리즈로 이동하세요.</string>
+
+    <string name="week_today">오늘</string>
+    <string name="msg_week_empty">이번 주에 방영되는 에피소드가 없습니다.</string>
+
+    <string name="kind_movie">영화</string>
+    <string name="kind_tv">시리즈</string>
+    <string name="kind_anime">애니메이션</string>
+    <string name="no_overview">줄거리가 없습니다.</string>
+    <string name="where_to_watch">시청 가능한 곳</string>
+    <string name="no_platform">아직 알려진 플랫폼이 없습니다.</string>
+    <string name="availability_error">시청 가능 여부를 가져오지 못했습니다.</string>
+    <string name="searching">검색 중…</string>
+    <string name="section_stream">구독</string>
+    <string name="section_rent_buy">대여 / 구매</string>
+    <string name="section_more_links">더 보기 링크</string>
+    <string name="no_link">사용 가능한 링크 없음</string>
+    <string name="no_browser">이 TV에는 링크를 열 브라우저가 없습니다.</string>
+    <string name="attribution">데이터: TMDB(시청 가능 정보: JustWatch), AniList. 이 제품은 TMDB API를 사용하지만 TMDB의 보증이나 인증을 받지 않았습니다.</string>
+    <string name="episode_short">%1$d화 · %2$s</string>
+
+    <string name="settings_phone_title">가장 쉬운 방법: 휴대폰 사용</string>
+    <string name="settings_phone_help">QR 코드를 스캔하거나, 같은 Wi-Fi의 휴대폰에서 아래 주소를 열고 TMDB 키를 붙여넣으세요. 키는 여기에 자동으로 저장됩니다.</string>
+    <string name="settings_phone_received">휴대폰에서 키를 받아 저장했습니다. 영화 또는 시리즈로 이동하세요.</string>
+    <string name="settings_phone_noip">휴대폰을 사용하려면 TV를 Wi-Fi 또는 네트워크에 연결하세요.</string>
+    <string name="phone_page_title">Hoshi · TMDB 키</string>
+    <string name="phone_page_label">TMDB API 키(v3)를 붙여넣으세요</string>
+    <string name="phone_page_button">TV로 보내기</string>
+    <string name="phone_page_ok">완료! 키를 TV로 보냈습니다. 이 페이지를 닫아도 됩니다.</string>
+    <string name="phone_page_bad">올바른 키가 아닌 것 같습니다(영문자와 숫자 32자). 뒤로 가서 다시 시도하세요.</string>
+</resources>

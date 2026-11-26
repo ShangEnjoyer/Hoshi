@@ -1,0 +1,50 @@
+<resources>
+    <string name="tab_settings">Configurações</string>
+
+
+    <string name="msg_loading">Carregando…</string>
+    <string name="msg_missing_key">Falta a chave da API do TMDB. Vá para a aba Configurações para colocá-la.</string>
+    <string name="msg_load_error">Não foi possível carregar o catálogo. Verifique sua conexão com a internet.</string>
+
+
+    <string name="settings_help">Necessária para filmes e séries (os animes funcionam sem chave). Crie uma conta grátis em themoviedb.org, vá em Configurações → API e copie a \"API Key\" (v3).</string>
+    <string name="settings_status_missing">Status: sem chave configurada</string>
+    <string name="settings_status_ok">Status: chave configurada</string>
+    <string name="settings_key_placeholder">Cole ou digite a chave aqui…</string>
+    <string name="settings_save">Salvar e recarregar</string>
+    <string name="settings_saved">Chave salva. Vá para Filmes ou Séries.</string>
+
+
+    <string name="no_platform">Nenhuma plataforma conhecida ainda.</string>
+    <string name="availability_error">Não foi possível obter a disponibilidade.</string>
+    <string name="searching">Pesquisando…</string>
+    <string name="section_stream">Assinatura</string>
+    <string name="section_more_links">Mais links</string>
+    <string name="no_link">Sem link disponível</string>
+    <string name="no_browser">Esta TV não tem navegador para abrir o link.</string>
+    <string name="attribution">Dados: TMDB (disponibilidade: JustWatch) e AniList. Este app usa a API do TMDB, mas não é endossado nem certificado pelo TMDB.</string>
+
+    <string name="settings_phone_title">Mais fácil: use o celular</string>
+    <string name="settings_phone_help">Escaneie o QR code, ou abra o endereço abaixo em um celular no mesmo Wi-Fi, e cole lá a sua chave do TMDB. Ela é salva aqui automaticamente.</string>
+    <string name="settings_phone_received">Chave recebida do celular e salva. Vá para Filmes ou Séries.</string>
+    <string name="settings_phone_noip">Conecte a TV ao Wi-Fi ou à rede para usar o celular.</string>
+    <string name="phone_page_title">Hoshi · Chave do TMDB</string>
+    <string name="phone_page_label">Cole sua chave da API do TMDB (v3)</string>
+    <string name="phone_page_button">Enviar para a TV</string>
+    <string name="phone_page_ok">Pronto! A chave foi enviada para a sua TV. Você pode fechar esta página.</string>
+    <string name="phone_page_bad">Isso não parece uma chave válida (deve ter 32 letras e números). Volte e tente de novo.</string>
+
+    <string name="msg_mylist_empty">Ainda não há nada aqui. Abra um título e adicione-o a Para ver ou aos Favoritos.</string>
+    <string name="msg_genre_empty">Nenhum título encontrado para este gênero.</string>
+    <string name="msg_invalid_key">O TMDB rejeitou a chave da API. Confira-a na aba Configurações.</string>
+    <string name="open_in_app">Abrir em um app</string>
+    <string name="no_apps_found">Nenhum app compatível foi encontrado nesta TV (Stremio, Netflix, Prime Video, Disney+, Crunchyroll).</string>
+    <string name="open_on_web">Buscar em um site</string>
+    <string name="settings_sites_title">Sites para buscar</string>
+    <string name="settings_sites_help">Adicione um endereço com marcadores onde deve entrar o título. Para ir direto ao título use {imdb} ou {tmdb} (e {type} = movie/tv), por exemplo https://www.imdb.com/title/{imdb}/ ou https://www.themoviedb.org/{type}/{tmdb}. Para pesquisar use {query}. Marcadores: {query} {title} {slug} {year} {imdb} {tmdb} {anilist} {type}. Os sites que precisam de um id que o título não tem ficam escondidos nesse título.</string>
+    <string name="settings_sites_remove">Selecione para remover</string>
+    <string name="settings_apps_help">Escolha qualquer app instalado nesta TV para adicioná-lo a Abrir em um app. Opcional: digite antes um link (marcadores como acima, ex.: stremio:///detail/{type}/{imdb}) e o app abre nesse link; sem ele, o app só abre.</string>
+    <string name="settings_apps_title">Apps para abrir títulos</string>
+    <string name="settings_apps_pick">Selecione um app para adicioná-lo:</string>
+    <string name="settings_apps_no_link">Só abre o app</string>
+</resources>

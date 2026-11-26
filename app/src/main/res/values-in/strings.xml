@@ -1,0 +1,65 @@
+<resources>
+    <string name="tab_home">Beranda</string>
+    <string name="tab_movies">Film</string>
+    <string name="tab_tv">Serial</string>
+    <string name="tab_anime">Anime</string>
+    <string name="tab_week">Minggu Ini</string>
+    <string name="tab_search">Cari</string>
+    <string name="tab_settings">Pengaturan</string>
+
+    <string name="row_movies_trending">Film trending</string>
+    <string name="row_movies_upcoming">Film segera tayang</string>
+    <string name="row_movies_popular">Film populer</string>
+    <string name="row_movies_top">Film dengan rating tertinggi</string>
+    <string name="row_tv_trending">Serial trending</string>
+    <string name="row_tv_airing">Serial yang sedang tayang</string>
+    <string name="row_tv_popular">Serial populer</string>
+    <string name="row_tv_top">Serial dengan rating tertinggi</string>
+    <string name="row_anime_today">Anime tayang hari ini</string>
+    <string name="row_anime_trending">Anime trending</string>
+    <string name="row_anime_popular">Anime populer</string>
+    <string name="row_anime_top">Anime dengan rating tertinggi</string>
+
+    <string name="msg_loading">Memuat…</string>
+    <string name="msg_missing_key">Kunci API TMDB belum diisi. Buka tab Pengaturan untuk memasukkannya.</string>
+    <string name="msg_load_error">Katalog tidak dapat dimuat. Periksa koneksi internet Anda.</string>
+
+    <string name="search_placeholder">Cari film, serial, dan anime…</string>
+
+    <string name="settings_title">Kunci API TMDB</string>
+    <string name="settings_help">Diperlukan untuk film dan serial (anime berfungsi tanpa kunci). Buat akun gratis di themoviedb.org, buka Pengaturan → API, lalu salin \"API Key\" (v3).</string>
+    <string name="settings_status_missing">Status: belum ada kunci</string>
+    <string name="settings_status_ok">Status: kunci tersimpan</string>
+    <string name="settings_key_placeholder">Tempel atau ketik kunci di sini…</string>
+    <string name="settings_save">Simpan dan muat ulang</string>
+    <string name="settings_saved">Kunci tersimpan. Buka Film atau Serial.</string>
+
+    <string name="week_today">hari ini</string>
+    <string name="msg_week_empty">Tidak ada episode untuk minggu ini.</string>
+
+    <string name="kind_movie">Film</string>
+    <string name="kind_tv">Serial</string>
+    <string name="kind_anime">Anime</string>
+    <string name="no_overview">Sinopsis tidak tersedia.</string>
+    <string name="where_to_watch">Tempat menonton</string>
+    <string name="no_platform">Belum ada platform yang diketahui.</string>
+    <string name="availability_error">Tidak dapat mengambil ketersediaan.</string>
+    <string name="searching">Mencari…</string>
+    <string name="section_stream">Langganan</string>
+    <string name="section_rent_buy">Sewa / beli</string>
+    <string name="section_more_links">Tautan lainnya</string>
+    <string name="no_link">Tautan tidak tersedia</string>
+    <string name="no_browser">TV ini tidak memiliki peramban untuk membuka tautan.</string>
+    <string name="attribution">Data: TMDB (ketersediaan: JustWatch) dan AniList. Produk ini menggunakan API TMDB tetapi tidak didukung atau disertifikasi oleh TMDB.</string>
+    <string name="episode_short">Eps. %1$d · %2$s</string>
+
+    <string name="settings_phone_title">Termudah: gunakan ponsel Anda</string>
+    <string name="settings_phone_help">Pindai kode QR, atau buka alamat di bawah di ponsel yang terhubung ke Wi-Fi yang sama, lalu tempel kunci TMDB Anda di sana. Kunci akan tersimpan di sini secara otomatis.</string>
+    <string name="settings_phone_received">Kunci diterima dari ponsel dan tersimpan. Buka Film atau Serial.</string>
+    <string name="settings_phone_noip">Hubungkan TV ke Wi-Fi atau jaringan untuk menggunakan ponsel Anda.</string>
+    <string name="phone_page_title">Hoshi · Kunci TMDB</string>
+    <string name="phone_page_label">Tempel kunci API TMDB (v3) Anda</string>
+    <string name="phone_page_button">Kirim ke TV</string>
+    <string name="phone_page_ok">Selesai! Kunci telah dikirim ke TV Anda. Anda dapat menutup halaman ini.</string>
+    <string name="phone_page_bad">Itu tampaknya bukan kunci yang valid (harus 32 huruf dan angka). Kembali dan coba lagi.</string>
+</resources>

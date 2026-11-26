@@ -1,0 +1,9 @@
+# Nunca enviar chaves nem ficheiros gerados para o GitHub
+local.properties
+*.jks
+*.keystore
+.gradle/
+build/
+.idea/
+*.iml
+captures/

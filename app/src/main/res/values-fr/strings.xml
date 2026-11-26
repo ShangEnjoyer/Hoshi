@@ -1,0 +1,65 @@
+<resources>
+    <string name="tab_home">Accueil</string>
+    <string name="tab_movies">Films</string>
+    <string name="tab_tv">Séries</string>
+    <string name="tab_anime">Animés</string>
+    <string name="tab_week">Semaine</string>
+    <string name="tab_search">Recherche</string>
+    <string name="tab_settings">Réglages</string>
+
+    <string name="row_movies_trending">Films tendance</string>
+    <string name="row_movies_upcoming">Films à venir</string>
+    <string name="row_movies_popular">Films populaires</string>
+    <string name="row_movies_top">Films les mieux notés</string>
+    <string name="row_tv_trending">Séries tendance</string>
+    <string name="row_tv_airing">Séries en cours de diffusion</string>
+    <string name="row_tv_popular">Séries populaires</string>
+    <string name="row_tv_top">Séries les mieux notées</string>
+    <string name="row_anime_today">Animés diffusés aujourd\'hui</string>
+    <string name="row_anime_trending">Animés tendance</string>
+    <string name="row_anime_popular">Animés populaires</string>
+    <string name="row_anime_top">Animés les mieux notés</string>
+
+    <string name="msg_loading">Chargement…</string>
+    <string name="msg_missing_key">La clé API TMDB est manquante. Ouvrez l\'onglet Réglages pour la saisir.</string>
+    <string name="msg_load_error">Impossible de charger le catalogue. Vérifiez votre connexion Internet.</string>
+
+    <string name="search_placeholder">Rechercher des films, séries et animés…</string>
+
+    <string name="settings_title">Clé API TMDB</string>
+    <string name="settings_help">Nécessaire pour les films et séries (les animés fonctionnent sans clé). Créez un compte gratuit sur themoviedb.org, allez dans Paramètres → API et copiez la « API Key » (v3).</string>
+    <string name="settings_status_missing">État : aucune clé</string>
+    <string name="settings_status_ok">État : clé enregistrée</string>
+    <string name="settings_key_placeholder">Collez ou saisissez la clé ici…</string>
+    <string name="settings_save">Enregistrer et recharger</string>
+    <string name="settings_saved">Clé enregistrée. Allez dans Films ou Séries.</string>
+
+    <string name="week_today">aujourd\'hui</string>
+    <string name="msg_week_empty">Aucun épisode trouvé pour cette semaine.</string>
+
+    <string name="kind_movie">Film</string>
+    <string name="kind_tv">Série</string>
+    <string name="kind_anime">Animé</string>
+    <string name="no_overview">Aucun synopsis disponible.</string>
+    <string name="where_to_watch">Où regarder</string>
+    <string name="no_platform">Aucune plateforme connue pour l\'instant.</string>
+    <string name="availability_error">Impossible d\'obtenir la disponibilité.</string>
+    <string name="searching">Recherche…</string>
+    <string name="section_stream">Abonnement</string>
+    <string name="section_rent_buy">Location / achat</string>
+    <string name="section_more_links">Plus de liens</string>
+    <string name="no_link">Aucun lien disponible</string>
+    <string name="no_browser">Ce téléviseur n\'a pas de navigateur pour ouvrir le lien.</string>
+    <string name="attribution">Données : TMDB (disponibilité : JustWatch) et AniList. Ce produit utilise l\'API TMDB mais n\'est ni approuvé ni certifié par TMDB.</string>
+    <string name="episode_short">Ép. %1$d · %2$s</string>
+
+    <string name="settings_phone_title">Le plus simple : utilisez votre téléphone</string>
+    <string name="settings_phone_help">Scannez le code QR, ou ouvrez l\'adresse ci-dessous sur un téléphone connecté au même Wi-Fi, et collez-y votre clé TMDB. Elle est enregistrée ici automatiquement.</string>
+    <string name="settings_phone_received">Clé reçue du téléphone et enregistrée. Allez dans Films ou Séries.</string>
+    <string name="settings_phone_noip">Connectez le téléviseur au Wi-Fi ou au réseau pour utiliser votre téléphone.</string>
+    <string name="phone_page_title">Hoshi · Clé TMDB</string>
+    <string name="phone_page_label">Collez votre clé API TMDB (v3)</string>
+    <string name="phone_page_button">Envoyer à la TV</string>
+    <string name="phone_page_ok">Terminé ! La clé a été envoyée à votre téléviseur. Vous pouvez fermer cette page.</string>
+    <string name="phone_page_bad">Cela ne ressemble pas à une clé valide (elle doit comporter 32 lettres et chiffres). Revenez en arrière et réessayez.</string>
+</resources>

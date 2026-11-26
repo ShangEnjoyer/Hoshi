@@ -1,0 +1,65 @@
+<resources>
+    <string name="tab_home">ホーム</string>
+    <string name="tab_movies">映画</string>
+    <string name="tab_tv">ドラマ</string>
+    <string name="tab_anime">アニメ</string>
+    <string name="tab_week">今週</string>
+    <string name="tab_search">検索</string>
+    <string name="tab_settings">設定</string>
+
+    <string name="row_movies_trending">トレンドの映画</string>
+    <string name="row_movies_upcoming">公開予定の映画</string>
+    <string name="row_movies_popular">人気の映画</string>
+    <string name="row_movies_top">高評価の映画</string>
+    <string name="row_tv_trending">トレンドのドラマ</string>
+    <string name="row_tv_airing">放送中のドラマ</string>
+    <string name="row_tv_popular">人気のドラマ</string>
+    <string name="row_tv_top">高評価のドラマ</string>
+    <string name="row_anime_today">今日放送のアニメ</string>
+    <string name="row_anime_trending">トレンドのアニメ</string>
+    <string name="row_anime_popular">人気のアニメ</string>
+    <string name="row_anime_top">高評価のアニメ</string>
+
+    <string name="msg_loading">読み込み中…</string>
+    <string name="msg_missing_key">TMDB の API キーがありません。「設定」タブで入力してください。</string>
+    <string name="msg_load_error">カタログを読み込めませんでした。インターネット接続を確認してください。</string>
+
+    <string name="search_placeholder">映画・ドラマ・アニメを検索…</string>
+
+    <string name="settings_title">TMDB API キー</string>
+    <string name="settings_help">映画とドラマに必要です（アニメはキーなしで使えます）。themoviedb.org で無料アカウントを作成し、設定 → API から「API Key」(v3) をコピーしてください。</string>
+    <string name="settings_status_missing">状態: キー未設定</string>
+    <string name="settings_status_ok">状態: キー設定済み</string>
+    <string name="settings_key_placeholder">ここにキーを貼り付けるか入力…</string>
+    <string name="settings_save">保存して再読み込み</string>
+    <string name="settings_saved">キーを保存しました。「映画」または「ドラマ」を開いてください。</string>
+
+    <string name="week_today">今日</string>
+    <string name="msg_week_empty">今週のエピソードは見つかりませんでした。</string>
+
+    <string name="kind_movie">映画</string>
+    <string name="kind_tv">ドラマ</string>
+    <string name="kind_anime">アニメ</string>
+    <string name="no_overview">あらすじはありません。</string>
+    <string name="where_to_watch">視聴できる場所</string>
+    <string name="no_platform">対応するサービスはまだ不明です。</string>
+    <string name="availability_error">配信状況を取得できませんでした。</string>
+    <string name="searching">検索中…</string>
+    <string name="section_stream">見放題</string>
+    <string name="section_rent_buy">レンタル / 購入</string>
+    <string name="section_more_links">その他のリンク</string>
+    <string name="no_link">リンクはありません</string>
+    <string name="no_browser">このテレビにはリンクを開くブラウザがありません。</string>
+    <string name="attribution">データ: TMDB（配信情報: JustWatch）、AniList。この製品は TMDB API を使用していますが、TMDB の承認・認定を受けたものではありません。</string>
+    <string name="episode_short">第%1$d話 · %2$s</string>
+
+    <string name="settings_phone_title">いちばん簡単: スマートフォンを使う</string>
+    <string name="settings_phone_help">QR コードを読み取るか、同じ Wi-Fi のスマートフォンで下のアドレスを開き、TMDB のキーを貼り付けてください。キーはここに自動で保存されます。</string>
+    <string name="settings_phone_received">スマートフォンからキーを受信して保存しました。「映画」または「ドラマ」を開いてください。</string>
+    <string name="settings_phone_noip">スマートフォンを使うには、テレビを Wi-Fi またはネットワークに接続してください。</string>
+    <string name="phone_page_title">Hoshi · TMDB キー</string>
+    <string name="phone_page_label">TMDB の API キー (v3) を貼り付け</string>
+    <string name="phone_page_button">テレビに送信</string>
+    <string name="phone_page_ok">完了しました！キーをテレビに送信しました。このページは閉じて構いません。</string>
+    <string name="phone_page_bad">有効なキーではないようです（英数字32文字です）。前のページに戻ってやり直してください。</string>
+</resources>

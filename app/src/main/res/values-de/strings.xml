@@ -1,0 +1,65 @@
+<resources>
+    <string name="tab_home">Start</string>
+    <string name="tab_movies">Filme</string>
+    <string name="tab_tv">Serien</string>
+    <string name="tab_anime">Anime</string>
+    <string name="tab_week">Woche</string>
+    <string name="tab_search">Suche</string>
+    <string name="tab_settings">Einstellungen</string>
+
+    <string name="row_movies_trending">Angesagte Filme</string>
+    <string name="row_movies_upcoming">Demnächst erscheinende Filme</string>
+    <string name="row_movies_popular">Beliebte Filme</string>
+    <string name="row_movies_top">Bestbewertete Filme</string>
+    <string name="row_tv_trending">Angesagte Serien</string>
+    <string name="row_tv_airing">Laufende Serien</string>
+    <string name="row_tv_popular">Beliebte Serien</string>
+    <string name="row_tv_top">Bestbewertete Serien</string>
+    <string name="row_anime_today">Anime, die heute laufen</string>
+    <string name="row_anime_trending">Angesagte Anime</string>
+    <string name="row_anime_popular">Beliebte Anime</string>
+    <string name="row_anime_top">Bestbewertete Anime</string>
+
+    <string name="msg_loading">Wird geladen…</string>
+    <string name="msg_missing_key">Der TMDB-API-Schlüssel fehlt. Gib ihn im Tab „Einstellungen“ ein.</string>
+    <string name="msg_load_error">Der Katalog konnte nicht geladen werden. Prüfe deine Internetverbindung.</string>
+
+    <string name="search_placeholder">Filme, Serien und Anime suchen…</string>
+
+    <string name="settings_title">TMDB-API-Schlüssel</string>
+    <string name="settings_help">Für Filme und Serien erforderlich (Anime funktionieren ohne Schlüssel). Erstelle ein kostenloses Konto auf themoviedb.org, öffne Einstellungen → API und kopiere den „API Key“ (v3).</string>
+    <string name="settings_status_missing">Status: kein Schlüssel</string>
+    <string name="settings_status_ok">Status: Schlüssel gespeichert</string>
+    <string name="settings_key_placeholder">Schlüssel hier einfügen oder eingeben…</string>
+    <string name="settings_save">Speichern und neu laden</string>
+    <string name="settings_saved">Schlüssel gespeichert. Wechsle zu Filme oder Serien.</string>
+
+    <string name="week_today">heute</string>
+    <string name="msg_week_empty">Für diese Woche wurden keine Folgen gefunden.</string>
+
+    <string name="kind_movie">Film</string>
+    <string name="kind_tv">Serie</string>
+    <string name="kind_anime">Anime</string>
+    <string name="no_overview">Keine Inhaltsangabe verfügbar.</string>
+    <string name="where_to_watch">Wo ansehen</string>
+    <string name="no_platform">Noch keine Plattform bekannt.</string>
+    <string name="availability_error">Verfügbarkeit konnte nicht abgerufen werden.</string>
+    <string name="searching">Suche läuft…</string>
+    <string name="section_stream">Abo</string>
+    <string name="section_rent_buy">Leihen / Kaufen</string>
+    <string name="section_more_links">Weitere Links</string>
+    <string name="no_link">Kein Link verfügbar</string>
+    <string name="no_browser">Dieser Fernseher hat keinen Browser, um den Link zu öffnen.</string>
+    <string name="attribution">Daten: TMDB (Verfügbarkeit: JustWatch) und AniList. Dieses Produkt verwendet die TMDB-API, wird aber nicht von TMDB unterstützt oder zertifiziert.</string>
+    <string name="episode_short">Folge %1$d · %2$s</string>
+
+    <string name="settings_phone_title">Am einfachsten: mit dem Smartphone</string>
+    <string name="settings_phone_help">Scanne den QR-Code oder öffne die Adresse unten auf einem Smartphone im selben WLAN und füge dort deinen TMDB-Schlüssel ein. Er wird hier automatisch gespeichert.</string>
+    <string name="settings_phone_received">Schlüssel vom Smartphone empfangen und gespeichert. Wechsle zu Filme oder Serien.</string>
+    <string name="settings_phone_noip">Verbinde den Fernseher mit deinem WLAN oder Netzwerk, um dein Smartphone zu verwenden.</string>
+    <string name="phone_page_title">Hoshi · TMDB-Schlüssel</string>
+    <string name="phone_page_label">TMDB-API-Schlüssel (v3) einfügen</string>
+    <string name="phone_page_button">An den Fernseher senden</string>
+    <string name="phone_page_ok">Fertig! Der Schlüssel wurde an deinen Fernseher gesendet. Du kannst diese Seite schließen.</string>
+    <string name="phone_page_bad">Das sieht nicht nach einem gültigen Schlüssel aus (er hat 32 Buchstaben und Zahlen). Geh zurück und versuche es erneut.</string>
+</resources>

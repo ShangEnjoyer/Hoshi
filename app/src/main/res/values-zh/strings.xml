@@ -1,0 +1,65 @@
+<resources>
+    <string name="tab_home">首页</string>
+    <string name="tab_movies">电影</string>
+    <string name="tab_tv">剧集</string>
+    <string name="tab_anime">动漫</string>
+    <string name="tab_week">本周</string>
+    <string name="tab_search">搜索</string>
+    <string name="tab_settings">设置</string>
+
+    <string name="row_movies_trending">热门电影</string>
+    <string name="row_movies_upcoming">即将上映的电影</string>
+    <string name="row_movies_popular">人气电影</string>
+    <string name="row_movies_top">高分电影</string>
+    <string name="row_tv_trending">热门剧集</string>
+    <string name="row_tv_airing">正在播出的剧集</string>
+    <string name="row_tv_popular">人气剧集</string>
+    <string name="row_tv_top">高分剧集</string>
+    <string name="row_anime_today">今日更新的动漫</string>
+    <string name="row_anime_trending">热门动漫</string>
+    <string name="row_anime_popular">人气动漫</string>
+    <string name="row_anime_top">高分动漫</string>
+
+    <string name="msg_loading">加载中…</string>
+    <string name="msg_missing_key">缺少 TMDB API 密钥。请前往“设置”标签页输入。</string>
+    <string name="msg_load_error">无法加载目录，请检查网络连接。</string>
+
+    <string name="search_placeholder">搜索电影、剧集和动漫…</string>
+
+    <string name="settings_title">TMDB API 密钥</string>
+    <string name="settings_help">电影和剧集需要此密钥（动漫无需密钥）。请在 themoviedb.org 免费注册账号，进入“设置”→“API”，复制“API Key”(v3)。</string>
+    <string name="settings_status_missing">状态：未设置密钥</string>
+    <string name="settings_status_ok">状态：已设置密钥</string>
+    <string name="settings_key_placeholder">在此粘贴或输入密钥…</string>
+    <string name="settings_save">保存并刷新</string>
+    <string name="settings_saved">密钥已保存。请前往“电影”或“剧集”。</string>
+
+    <string name="week_today">今天</string>
+    <string name="msg_week_empty">本周没有找到剧集。</string>
+
+    <string name="kind_movie">电影</string>
+    <string name="kind_tv">剧集</string>
+    <string name="kind_anime">动漫</string>
+    <string name="no_overview">暂无简介。</string>
+    <string name="where_to_watch">在哪观看</string>
+    <string name="no_platform">暂无已知平台。</string>
+    <string name="availability_error">无法获取播放平台信息。</string>
+    <string name="searching">搜索中…</string>
+    <string name="section_stream">订阅</string>
+    <string name="section_rent_buy">租借 / 购买</string>
+    <string name="section_more_links">更多链接</string>
+    <string name="no_link">没有可用链接</string>
+    <string name="no_browser">这台电视没有可打开链接的浏览器。</string>
+    <string name="attribution">数据来源：TMDB（可用性：JustWatch）和 AniList。本产品使用 TMDB API，但未获得 TMDB 的认可或认证。</string>
+    <string name="episode_short">第%1$d集 · %2$s</string>
+
+    <string name="settings_phone_title">最简单：使用手机</string>
+    <string name="settings_phone_help">扫描二维码，或在同一 Wi-Fi 下的手机上打开下面的地址，并在那里粘贴你的 TMDB 密钥。密钥会自动保存到这里。</string>
+    <string name="settings_phone_received">已收到手机发来的密钥并保存。请前往“电影”或“剧集”。</string>
+    <string name="settings_phone_noip">请将电视连接到 Wi-Fi 或网络，以便使用手机。</string>
+    <string name="phone_page_title">Hoshi · TMDB 密钥</string>
+    <string name="phone_page_label">粘贴你的 TMDB API 密钥 (v3)</string>
+    <string name="phone_page_button">发送到电视</string>
+    <string name="phone_page_ok">完成！密钥已发送到你的电视。你可以关闭此页面。</string>
+    <string name="phone_page_bad">这看起来不是有效的密钥（应为 32 位字母和数字）。请返回重试。</string>
+</resources>

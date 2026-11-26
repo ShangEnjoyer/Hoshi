@@ -1,0 +1,98 @@
+<resources>
+    <string name="tab_home">Início</string>
+    <string name="tab_movies">Filmes</string>
+    <string name="tab_tv">Séries</string>
+    <string name="tab_anime">Animes</string>
+    <string name="tab_week">Semana</string>
+    <string name="tab_search">Pesquisa</string>
+    <string name="tab_settings">Definições</string>
+
+    <string name="row_movies_trending">Filmes em alta</string>
+    <string name="row_movies_upcoming">Filmes que estreiam em breve</string>
+    <string name="row_movies_popular">Filmes populares</string>
+    <string name="row_movies_top">Filmes mais bem avaliados</string>
+    <string name="row_tv_trending">Séries em alta</string>
+    <string name="row_tv_airing">Séries em exibição</string>
+    <string name="row_tv_popular">Séries populares</string>
+    <string name="row_tv_top">Séries mais bem avaliadas</string>
+    <string name="row_anime_today">Animes que estreiam hoje</string>
+    <string name="row_anime_trending">Animes em alta</string>
+    <string name="row_anime_popular">Animes populares</string>
+    <string name="row_anime_top">Animes mais bem avaliados</string>
+
+    <string name="msg_loading">A carregar…</string>
+    <string name="msg_missing_key">Falta a chave da API do TMDB. Vai ao separador Definições para a colocar.</string>
+    <string name="msg_load_error">Não foi possível carregar o catálogo. Verifica a ligação à internet.</string>
+
+    <string name="search_placeholder">Pesquisar filmes, séries e animes…</string>
+
+    <string name="settings_title">Chave da API do TMDB</string>
+    <string name="settings_help">Necessária para filmes e séries (os animes funcionam sem chave). Cria uma conta grátis em themoviedb.org, vai a Definições → API e copia a \"API Key\" (v3).</string>
+    <string name="settings_status_missing">Estado: sem chave configurada</string>
+    <string name="settings_status_ok">Estado: chave configurada</string>
+    <string name="settings_key_placeholder">Cola ou escreve aqui a chave…</string>
+    <string name="settings_save">Guardar e recarregar</string>
+    <string name="settings_saved">Chave guardada. Vai a Filmes ou Séries.</string>
+
+    <string name="week_today">hoje</string>
+    <string name="msg_week_empty">Não foram encontrados episódios para esta semana.</string>
+
+    <string name="kind_movie">Filme</string>
+    <string name="kind_tv">Série</string>
+    <string name="kind_anime">Anime</string>
+    <string name="no_overview">Sem sinopse disponível.</string>
+    <string name="where_to_watch">Onde ver</string>
+    <string name="no_platform">Ainda sem plataforma conhecida.</string>
+    <string name="availability_error">Não foi possível obter a disponibilidade.</string>
+    <string name="searching">A procurar…</string>
+    <string name="section_stream">Subscrição</string>
+    <string name="section_rent_buy">Alugar / comprar</string>
+    <string name="section_more_links">Mais ligações</string>
+    <string name="no_link">Sem ligação disponível</string>
+    <string name="no_browser">Esta TV não tem navegador para abrir a ligação.</string>
+    <string name="attribution">Dados: TMDB (disponibilidade: JustWatch) e AniList. Esta app usa a API do TMDB mas não é endossada nem certificada pelo TMDB.</string>
+    <string name="episode_short">Ep. %1$d · %2$s</string>
+
+    <string name="settings_phone_title">Mais fácil: usa o telemóvel</string>
+    <string name="settings_phone_help">Lê o código QR, ou abre o endereço abaixo num telemóvel ligado ao mesmo Wi-Fi, e cola lá a tua chave do TMDB. É guardada aqui automaticamente.</string>
+    <string name="settings_phone_received">Chave recebida do telemóvel e guardada. Vai a Filmes ou Séries.</string>
+    <string name="settings_phone_noip">Liga a TV ao Wi-Fi ou à rede para usar o telemóvel.</string>
+    <string name="phone_page_title">Hoshi · Chave do TMDB</string>
+    <string name="phone_page_label">Cola a tua chave da API do TMDB (v3)</string>
+    <string name="phone_page_button">Enviar para a TV</string>
+    <string name="phone_page_ok">Pronto! A chave foi enviada para a tua TV. Podes fechar esta página.</string>
+    <string name="phone_page_bad">Isto não parece uma chave válida (deve ter 32 letras e números). Volta atrás e tenta outra vez.</string>
+
+    <string name="tab_mylist">Minha lista</string>
+    <string name="row_watchlist">Para ver</string>
+    <string name="row_favorites">Favoritos</string>
+    <string name="msg_mylist_empty">Ainda não há nada aqui. Abre um título e adiciona-o a Para ver ou aos Favoritos.</string>
+    <string name="watchlist_add">+ Para ver</string>
+    <string name="watchlist_remove">✓ Em Para ver</string>
+    <string name="favorite_add">☆ Favorito</string>
+    <string name="favorite_remove">★ Favorito</string>
+
+    <string name="genre_all">Todos</string>
+    <string name="msg_genre_empty">Não foram encontrados títulos deste género.</string>
+    <string name="msg_invalid_key">O TMDB rejeitou a chave da API. Confirma-a no separador Definições.</string>
+
+    <string name="open_in_app">Abrir numa app</string>
+    <string name="no_apps_found">Não foi encontrada nenhuma app compatível nesta TV (Stremio, Netflix, Prime Video, Disney+, Crunchyroll).</string>
+    <string name="open_in_named">Abrir em %1$s</string>
+    <string name="app_open_failed">Não foi possível abrir %1$s.</string>
+    <string name="open_on_web">Procurar num site</string>
+    <string name="web_youtube_trailer">YouTube (trailer)</string>
+
+    <string name="settings_sites_title">Sites para procurar</string>
+    <string name="settings_sites_help">Junta um endereço com marcadores onde deve entrar o título. Para ir direto ao título usa {imdb} ou {tmdb} (e {type} = movie/tv), por exemplo https://www.imdb.com/title/{imdb}/ ou https://www.themoviedb.org/{type}/{tmdb}. Para pesquisar usa {query}. Marcadores: {query} {title} {slug} {year} {imdb} {tmdb} {anilist} {type}. Os sites que precisam de um id que o título não tem ficam escondidos nesse título.</string>
+    <string name="settings_sites_placeholder">https://…/search?q={query}</string>
+    <string name="settings_sites_add">Adicionar site</string>
+    <string name="settings_sites_invalid">O endereço tem de começar por http:// ou https:// e conter um marcador como {query} ou {imdb}.</string>
+    <string name="settings_sites_remove">Seleciona para remover</string>
+    <string name="settings_apps_title">Apps para abrir títulos</string>
+    <string name="settings_apps_help">Escolhe qualquer app instalada nesta TV para a juntar a Abrir numa app. Opcional: escreve primeiro uma ligação (marcadores como acima, ex.: stremio:///detail/{type}/{imdb}) e a app abre nessa ligação; sem ela, a app só abre.</string>
+    <string name="settings_apps_placeholder">Ligação opcional, ex.: minhaapp://title/{imdb}</string>
+    <string name="settings_apps_invalid">A ligação tem de conter :// e um marcador como {imdb} ou {query}.</string>
+    <string name="settings_apps_pick">Seleciona uma app para a juntar:</string>
+    <string name="settings_apps_no_link">Só abre a app</string>
+</resources>

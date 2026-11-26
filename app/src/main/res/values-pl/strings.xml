@@ -1,0 +1,65 @@
+<resources>
+    <string name="tab_home">Start</string>
+    <string name="tab_movies">Filmy</string>
+    <string name="tab_tv">Seriale</string>
+    <string name="tab_anime">Anime</string>
+    <string name="tab_week">Tydzień</string>
+    <string name="tab_search">Szukaj</string>
+    <string name="tab_settings">Ustawienia</string>
+
+    <string name="row_movies_trending">Filmy na topie</string>
+    <string name="row_movies_upcoming">Nadchodzące filmy</string>
+    <string name="row_movies_popular">Popularne filmy</string>
+    <string name="row_movies_top">Najwyżej oceniane filmy</string>
+    <string name="row_tv_trending">Seriale na topie</string>
+    <string name="row_tv_airing">Seriale w emisji</string>
+    <string name="row_tv_popular">Popularne seriale</string>
+    <string name="row_tv_top">Najwyżej oceniane seriale</string>
+    <string name="row_anime_today">Anime emitowane dziś</string>
+    <string name="row_anime_trending">Anime na topie</string>
+    <string name="row_anime_popular">Popularne anime</string>
+    <string name="row_anime_top">Najwyżej oceniane anime</string>
+
+    <string name="msg_loading">Ładowanie…</string>
+    <string name="msg_missing_key">Brak klucza API TMDB. Przejdź do zakładki Ustawienia, aby go wpisać.</string>
+    <string name="msg_load_error">Nie udało się wczytać katalogu. Sprawdź połączenie z internetem.</string>
+
+    <string name="search_placeholder">Szukaj filmów, seriali i anime…</string>
+
+    <string name="settings_title">Klucz API TMDB</string>
+    <string name="settings_help">Wymagany dla filmów i seriali (anime działają bez klucza). Załóż darmowe konto na themoviedb.org, przejdź do Ustawienia → API i skopiuj „API Key” (v3).</string>
+    <string name="settings_status_missing">Stan: brak klucza</string>
+    <string name="settings_status_ok">Stan: klucz zapisany</string>
+    <string name="settings_key_placeholder">Wklej lub wpisz tutaj klucz…</string>
+    <string name="settings_save">Zapisz i odśwież</string>
+    <string name="settings_saved">Klucz zapisany. Przejdź do Filmy lub Seriale.</string>
+
+    <string name="week_today">dziś</string>
+    <string name="msg_week_empty">Nie znaleziono odcinków na ten tydzień.</string>
+
+    <string name="kind_movie">Film</string>
+    <string name="kind_tv">Serial</string>
+    <string name="kind_anime">Anime</string>
+    <string name="no_overview">Brak opisu.</string>
+    <string name="where_to_watch">Gdzie obejrzeć</string>
+    <string name="no_platform">Brak znanej platformy.</string>
+    <string name="availability_error">Nie udało się pobrać informacji o dostępności.</string>
+    <string name="searching">Szukanie…</string>
+    <string name="section_stream">Subskrypcja</string>
+    <string name="section_rent_buy">Wypożyczenie / zakup</string>
+    <string name="section_more_links">Więcej linków</string>
+    <string name="no_link">Brak dostępnego linku</string>
+    <string name="no_browser">Ten telewizor nie ma przeglądarki do otwarcia linku.</string>
+    <string name="attribution">Dane: TMDB (dostępność: JustWatch) i AniList. Ten produkt korzysta z API TMDB, ale nie jest popierany ani certyfikowany przez TMDB.</string>
+    <string name="episode_short">Odc. %1$d · %2$s</string>
+
+    <string name="settings_phone_title">Najłatwiej: użyj telefonu</string>
+    <string name="settings_phone_help">Zeskanuj kod QR lub otwórz poniższy adres na telefonie w tej samej sieci Wi-Fi i wklej tam swój klucz TMDB. Zostanie zapisany tutaj automatycznie.</string>
+    <string name="settings_phone_received">Klucz odebrany z telefonu i zapisany. Przejdź do Filmy lub Seriale.</string>
+    <string name="settings_phone_noip">Połącz telewizor z Wi-Fi lub siecią, aby użyć telefonu.</string>
+    <string name="phone_page_title">Hoshi · Klucz TMDB</string>
+    <string name="phone_page_label">Wklej swój klucz API TMDB (v3)</string>
+    <string name="phone_page_button">Wyślij do telewizora</string>
+    <string name="phone_page_ok">Gotowe! Klucz został wysłany do telewizora. Możesz zamknąć tę stronę.</string>
+    <string name="phone_page_bad">To nie wygląda na prawidłowy klucz (powinien mieć 32 litery i cyfry). Wróć i spróbuj ponownie.</string>
+</resources>

@@ -1,0 +1,65 @@
+<resources>
+    <string name="tab_home">Home</string>
+    <string name="tab_movies">Film</string>
+    <string name="tab_tv">Serie TV</string>
+    <string name="tab_anime">Anime</string>
+    <string name="tab_week">Settimana</string>
+    <string name="tab_search">Cerca</string>
+    <string name="tab_settings">Impostazioni</string>
+
+    <string name="row_movies_trending">Film di tendenza</string>
+    <string name="row_movies_upcoming">Film in arrivo</string>
+    <string name="row_movies_popular">Film popolari</string>
+    <string name="row_movies_top">Film più votati</string>
+    <string name="row_tv_trending">Serie TV di tendenza</string>
+    <string name="row_tv_airing">Serie TV in onda</string>
+    <string name="row_tv_popular">Serie TV popolari</string>
+    <string name="row_tv_top">Serie TV più votate</string>
+    <string name="row_anime_today">Anime in onda oggi</string>
+    <string name="row_anime_trending">Anime di tendenza</string>
+    <string name="row_anime_popular">Anime popolari</string>
+    <string name="row_anime_top">Anime più votati</string>
+
+    <string name="msg_loading">Caricamento…</string>
+    <string name="msg_missing_key">Manca la chiave API di TMDB. Vai alla scheda Impostazioni per inserirla.</string>
+    <string name="msg_load_error">Impossibile caricare il catalogo. Controlla la connessione a Internet.</string>
+
+    <string name="search_placeholder">Cerca film, serie TV e anime…</string>
+
+    <string name="settings_title">Chiave API di TMDB</string>
+    <string name="settings_help">Necessaria per film e serie TV (gli anime funzionano senza chiave). Crea un account gratuito su themoviedb.org, vai in Impostazioni → API e copia la \"API Key\" (v3).</string>
+    <string name="settings_status_missing">Stato: nessuna chiave</string>
+    <string name="settings_status_ok">Stato: chiave salvata</string>
+    <string name="settings_key_placeholder">Incolla o scrivi qui la chiave…</string>
+    <string name="settings_save">Salva e ricarica</string>
+    <string name="settings_saved">Chiave salvata. Vai su Film o Serie TV.</string>
+
+    <string name="week_today">oggi</string>
+    <string name="msg_week_empty">Nessun episodio trovato per questa settimana.</string>
+
+    <string name="kind_movie">Film</string>
+    <string name="kind_tv">Serie TV</string>
+    <string name="kind_anime">Anime</string>
+    <string name="no_overview">Nessuna trama disponibile.</string>
+    <string name="where_to_watch">Dove guardare</string>
+    <string name="no_platform">Nessuna piattaforma nota per ora.</string>
+    <string name="availability_error">Impossibile ottenere la disponibilità.</string>
+    <string name="searching">Ricerca in corso…</string>
+    <string name="section_stream">Abbonamento</string>
+    <string name="section_rent_buy">Noleggio / acquisto</string>
+    <string name="section_more_links">Altri link</string>
+    <string name="no_link">Nessun link disponibile</string>
+    <string name="no_browser">Questa TV non ha un browser per aprire il link.</string>
+    <string name="attribution">Dati: TMDB (disponibilità: JustWatch) e AniList. Questo prodotto usa l\'API di TMDB ma non è approvato né certificato da TMDB.</string>
+    <string name="episode_short">Ep. %1$d · %2$s</string>
+
+    <string name="settings_phone_title">Più semplice: usa il telefono</string>
+    <string name="settings_phone_help">Inquadra il codice QR, oppure apri l\'indirizzo qui sotto su un telefono collegato allo stesso Wi-Fi e incolla lì la tua chiave TMDB. Viene salvata qui automaticamente.</string>
+    <string name="settings_phone_received">Chiave ricevuta dal telefono e salvata. Vai su Film o Serie TV.</string>
+    <string name="settings_phone_noip">Collega la TV al Wi-Fi o alla rete per usare il telefono.</string>
+    <string name="phone_page_title">Hoshi · Chiave TMDB</string>
+    <string name="phone_page_label">Incolla la tua chiave API di TMDB (v3)</string>
+    <string name="phone_page_button">Invia alla TV</string>
+    <string name="phone_page_ok">Fatto! La chiave è stata inviata alla tua TV. Puoi chiudere questa pagina.</string>
+    <string name="phone_page_bad">Non sembra una chiave valida (deve avere 32 lettere e numeri). Torna indietro e riprova.</string>
+</resources>

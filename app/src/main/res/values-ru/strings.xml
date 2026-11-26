@@ -1,0 +1,65 @@
+<resources>
+    <string name="tab_home">Главная</string>
+    <string name="tab_movies">Фильмы</string>
+    <string name="tab_tv">Сериалы</string>
+    <string name="tab_anime">Аниме</string>
+    <string name="tab_week">Неделя</string>
+    <string name="tab_search">Поиск</string>
+    <string name="tab_settings">Настройки</string>
+
+    <string name="row_movies_trending">Фильмы в тренде</string>
+    <string name="row_movies_upcoming">Скоро выйдут</string>
+    <string name="row_movies_popular">Популярные фильмы</string>
+    <string name="row_movies_top">Фильмы с высоким рейтингом</string>
+    <string name="row_tv_trending">Сериалы в тренде</string>
+    <string name="row_tv_airing">Сейчас в эфире</string>
+    <string name="row_tv_popular">Популярные сериалы</string>
+    <string name="row_tv_top">Сериалы с высоким рейтингом</string>
+    <string name="row_anime_today">Аниме, выходящее сегодня</string>
+    <string name="row_anime_trending">Аниме в тренде</string>
+    <string name="row_anime_popular">Популярное аниме</string>
+    <string name="row_anime_top">Аниме с высоким рейтингом</string>
+
+    <string name="msg_loading">Загрузка…</string>
+    <string name="msg_missing_key">Не указан ключ API TMDB. Введите его на вкладке «Настройки».</string>
+    <string name="msg_load_error">Не удалось загрузить каталог. Проверьте подключение к интернету.</string>
+
+    <string name="search_placeholder">Поиск фильмов, сериалов и аниме…</string>
+
+    <string name="settings_title">Ключ API TMDB</string>
+    <string name="settings_help">Нужен для фильмов и сериалов (аниме работает без ключа). Создайте бесплатный аккаунт на themoviedb.org, откройте «Настройки» → API и скопируйте «API Key» (v3).</string>
+    <string name="settings_status_missing">Статус: ключ не указан</string>
+    <string name="settings_status_ok">Статус: ключ сохранён</string>
+    <string name="settings_key_placeholder">Вставьте или введите ключ здесь…</string>
+    <string name="settings_save">Сохранить и обновить</string>
+    <string name="settings_saved">Ключ сохранён. Откройте «Фильмы» или «Сериалы».</string>
+
+    <string name="week_today">сегодня</string>
+    <string name="msg_week_empty">На эту неделю эпизодов не найдено.</string>
+
+    <string name="kind_movie">Фильм</string>
+    <string name="kind_tv">Сериал</string>
+    <string name="kind_anime">Аниме</string>
+    <string name="no_overview">Описание недоступно.</string>
+    <string name="where_to_watch">Где смотреть</string>
+    <string name="no_platform">Пока нет известных платформ.</string>
+    <string name="availability_error">Не удалось получить данные о доступности.</string>
+    <string name="searching">Поиск…</string>
+    <string name="section_stream">Подписка</string>
+    <string name="section_rent_buy">Аренда / покупка</string>
+    <string name="section_more_links">Другие ссылки</string>
+    <string name="no_link">Ссылка недоступна</string>
+    <string name="no_browser">На этом телевизоре нет браузера для открытия ссылки.</string>
+    <string name="attribution">Данные: TMDB (доступность: JustWatch) и AniList. Этот продукт использует API TMDB, но не одобрен и не сертифицирован TMDB.</string>
+    <string name="episode_short">Серия %1$d · %2$s</string>
+
+    <string name="settings_phone_title">Проще всего: используйте телефон</string>
+    <string name="settings_phone_help">Отсканируйте QR-код или откройте адрес ниже на телефоне в той же сети Wi-Fi и вставьте там свой ключ TMDB. Он сохранится здесь автоматически.</string>
+    <string name="settings_phone_received">Ключ получен с телефона и сохранён. Откройте «Фильмы» или «Сериалы».</string>
+    <string name="settings_phone_noip">Подключите телевизор к Wi-Fi или сети, чтобы использовать телефон.</string>
+    <string name="phone_page_title">Hoshi · Ключ TMDB</string>
+    <string name="phone_page_label">Вставьте свой ключ API TMDB (v3)</string>
+    <string name="phone_page_button">Отправить на ТВ</string>
+    <string name="phone_page_ok">Готово! Ключ отправлен на телевизор. Эту страницу можно закрыть.</string>
+    <string name="phone_page_bad">Это не похоже на действительный ключ (в нём 32 буквы и цифры). Вернитесь и попробуйте снова.</string>
+</resources>

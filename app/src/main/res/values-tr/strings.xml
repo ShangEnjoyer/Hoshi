@@ -1,0 +1,65 @@
+<resources>
+    <string name="tab_home">Ana Sayfa</string>
+    <string name="tab_movies">Filmler</string>
+    <string name="tab_tv">Diziler</string>
+    <string name="tab_anime">Anime</string>
+    <string name="tab_week">Hafta</string>
+    <string name="tab_search">Ara</string>
+    <string name="tab_settings">Ayarlar</string>
+
+    <string name="row_movies_trending">Trend filmler</string>
+    <string name="row_movies_upcoming">Yakında vizyonda</string>
+    <string name="row_movies_popular">Popüler filmler</string>
+    <string name="row_movies_top">En yüksek puanlı filmler</string>
+    <string name="row_tv_trending">Trend diziler</string>
+    <string name="row_tv_airing">Yayındaki diziler</string>
+    <string name="row_tv_popular">Popüler diziler</string>
+    <string name="row_tv_top">En yüksek puanlı diziler</string>
+    <string name="row_anime_today">Bugün yayınlanan anime</string>
+    <string name="row_anime_trending">Trend anime</string>
+    <string name="row_anime_popular">Popüler anime</string>
+    <string name="row_anime_top">En yüksek puanlı anime</string>
+
+    <string name="msg_loading">Yükleniyor…</string>
+    <string name="msg_missing_key">TMDB API anahtarı eksik. Girmek için Ayarlar sekmesine git.</string>
+    <string name="msg_load_error">Katalog yüklenemedi. İnternet bağlantını kontrol et.</string>
+
+    <string name="search_placeholder">Film, dizi ve anime ara…</string>
+
+    <string name="settings_title">TMDB API anahtarı</string>
+    <string name="settings_help">Filmler ve diziler için gereklidir (anime anahtarsız çalışır). themoviedb.org\'da ücretsiz bir hesap oluştur, Ayarlar → API\'ye git ve \"API Key\" (v3) değerini kopyala.</string>
+    <string name="settings_status_missing">Durum: anahtar yok</string>
+    <string name="settings_status_ok">Durum: anahtar kayıtlı</string>
+    <string name="settings_key_placeholder">Anahtarı buraya yapıştır veya yaz…</string>
+    <string name="settings_save">Kaydet ve yenile</string>
+    <string name="settings_saved">Anahtar kaydedildi. Filmler veya Diziler\'e git.</string>
+
+    <string name="week_today">bugün</string>
+    <string name="msg_week_empty">Bu hafta için bölüm bulunamadı.</string>
+
+    <string name="kind_movie">Film</string>
+    <string name="kind_tv">Dizi</string>
+    <string name="kind_anime">Anime</string>
+    <string name="no_overview">Özet mevcut değil.</string>
+    <string name="where_to_watch">Nereden izlenir</string>
+    <string name="no_platform">Henüz bilinen bir platform yok.</string>
+    <string name="availability_error">Erişilebilirlik bilgisi alınamadı.</string>
+    <string name="searching">Aranıyor…</string>
+    <string name="section_stream">Abonelik</string>
+    <string name="section_rent_buy">Kirala / satın al</string>
+    <string name="section_more_links">Daha fazla bağlantı</string>
+    <string name="no_link">Bağlantı yok</string>
+    <string name="no_browser">Bu televizyonda bağlantıyı açacak bir tarayıcı yok.</string>
+    <string name="attribution">Veriler: TMDB (erişilebilirlik: JustWatch) ve AniList. Bu ürün TMDB API\'sini kullanır ancak TMDB tarafından onaylanmamış veya sertifikalandırılmamıştır.</string>
+    <string name="episode_short">Böl. %1$d · %2$s</string>
+
+    <string name="settings_phone_title">En kolayı: telefonunu kullan</string>
+    <string name="settings_phone_help">QR kodunu tara veya aşağıdaki adresi aynı Wi-Fi ağındaki bir telefonda aç ve TMDB anahtarını oraya yapıştır. Burada otomatik olarak kaydedilir.</string>
+    <string name="settings_phone_received">Anahtar telefondan alındı ve kaydedildi. Filmler veya Diziler\'e git.</string>
+    <string name="settings_phone_noip">Telefonunu kullanmak için TV\'yi Wi-Fi\'ye veya ağa bağla.</string>
+    <string name="phone_page_title">Hoshi · TMDB anahtarı</string>
+    <string name="phone_page_label">TMDB API anahtarını (v3) yapıştır</string>
+    <string name="phone_page_button">TV\'ye gönder</string>
+    <string name="phone_page_ok">Tamam! Anahtar TV\'ne gönderildi. Bu sayfayı kapatabilirsin.</string>
+    <string name="phone_page_bad">Bu geçerli bir anahtar gibi görünmüyor (32 harf ve rakamdan oluşmalı). Geri dön ve tekrar dene.</string>
+</resources>
