@@ -39,9 +39,6 @@
     <string name="msg_invalid_key">O TMDB rejeitou a chave da API. Confira-a na aba Configurações.</string>
     <string name="open_in_app">Abrir em um app</string>
     <string name="no_apps_found">Nenhum app compatível foi encontrado nesta TV (Stremio, Netflix, Prime Video, Disney+, Crunchyroll).</string>
-    <string name="open_on_web">Buscar em um site</string>
-    <string name="settings_sites_title">Sites para buscar</string>
-    <string name="settings_sites_help">Adicione um endereço com marcadores onde deve entrar o título. Para ir direto ao título use {imdb} ou {tmdb} (e {type} = movie/tv), por exemplo https://www.imdb.com/title/{imdb}/ ou https://www.themoviedb.org/{type}/{tmdb}. Para pesquisar use {query}. Marcadores: {query} {title} {slug} {year} {imdb} {tmdb} {anilist} {type}. Os sites que precisam de um id que o título não tem ficam escondidos nesse título.</string>
     <string name="settings_sites_remove">Selecione para remover</string>
     <string name="settings_apps_help">Escolha qualquer app instalado nesta TV para adicioná-lo a Abrir em um app. Opcional: digite antes um link (marcadores como acima, ex.: stremio:///detail/{type}/{imdb}) e o app abre nesse link; sem ele, o app só abre.</string>
     <string name="settings_apps_title">Apps para abrir títulos</string>

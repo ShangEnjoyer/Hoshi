@@ -103,3 +103,15 @@ data class AniTitle(val romaji: String?, val english: String?)
 data class AniCover(val extraLarge: String?)
 
 data class AniLink(val site: String?, val url: String?, val type: String?)
+
+/**
+ * O Gson cria objetos sem correr os valores por defeito do Kotlin, por isso um título guardado
+ * por uma versão antiga pode voltar com listas/textos a null. Isto repõe valores seguros.
+ */
+@Suppress("USELESS_CAST")
+fun CatalogItem.sanitized(): CatalogItem = copy(
+    title = (title as String?) ?: "—",
+    overview = (overview as String?).orEmpty(),
+    whereToWatch = (whereToWatch as List<WatchLink>?).orEmpty(),
+    otherLinks = (otherLinks as List<WatchLink>?).orEmpty(),
+)

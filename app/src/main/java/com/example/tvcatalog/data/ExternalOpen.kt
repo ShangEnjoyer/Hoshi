@@ -4,12 +4,11 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import java.text.Normalizer
-import com.example.tvcatalog.R
 import com.example.tvcatalog.WebViewActivity
 
 /**
  * Abre um título fora da Hoshi: numa app de streaming instalada na TV (Stremio, Netflix, …)
- * ou num site (pesquisa pelo título).
+ * ou numa página web.
  *
  * Para a Hoshi conseguir "ver" estas apps no Android 11+, os pacotes têm de estar listados em
  * <queries> no AndroidManifest.xml. Se acrescentares uma app aqui, acrescenta-a lá também.
@@ -26,9 +25,6 @@ object ExternalOpen {
         /** Ligação direta ao título; recebe o item e o id IMDb (se existir). Null = só abre a app. */
         val deepLink: ((CatalogItem, String?) -> String?)? = null,
     )
-
-    /** Um site onde procurar o título. */
-    class WebTarget(val label: String, val url: String)
 
     private fun enc(s: String): String = Uri.encode(s)
 
@@ -188,34 +184,4 @@ object ExternalOpen {
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         )
     }.isSuccess
-
-    /** Sites onde procurar o título: primeiro os teus (Definições), depois alguns fixos. */
-    fun webTargets(
-        context: Context,
-        item: CatalogItem,
-        imdbId: String?,
-        customSites: List<String>,
-    ): List<WebTarget> {
-        val year = item.year?.let { " $it" }.orEmpty()
-        val out = mutableListOf<WebTarget>()
-        customSites.forEach { template ->
-            val url = fillTemplate(template, item, imdbId)
-            if (url != null) out += WebTarget(siteName(template), url)
-        }
-        out += WebTarget(
-            context.getString(R.string.web_youtube_trailer),
-            "https://www.youtube.com/results?search_query=${enc(item.title + year + " trailer")}",
-        )
-        out += WebTarget(
-            "IMDb",
-            imdbId?.let { "https://www.imdb.com/title/$it/" }
-                ?: "https://www.imdb.com/find/?q=${enc(item.title)}",
-        )
-        out += WebTarget("Google", "https://www.google.com/search?q=${enc(item.title + year)}")
-        return out
-    }
-
-    private fun siteName(template: String): String =
-        runCatching { Uri.parse(template).host }.getOrNull()?.removePrefix("www.")?.ifBlank { null }
-            ?: template
 }

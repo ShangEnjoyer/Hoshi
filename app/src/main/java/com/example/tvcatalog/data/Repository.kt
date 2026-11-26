@@ -67,9 +67,7 @@ object Repository {
         prefs?.edit()?.putString("tmdb_key", key.trim())?.apply()
     }
 
-    // ---------- Sites para procurar o título (definidos pelo utilizador) ----------
-
-    /** Marcadores que o utilizador pode usar nos endereços (sites e apps). */
+    /** Marcadores que o utilizador pode usar nos endereços das apps. */
     val PLACEHOLDERS = listOf("{query}", "{title}", "{imdb}", "{tmdb}", "{anilist}", "{type}", "{year}", "{slug}")
 
     private fun hasPlaceholder(t: String) = PLACEHOLDERS.any { t.contains(it) }
@@ -96,27 +94,6 @@ object Repository {
     fun removeCustomApp(pkg: String) {
         val list = customApps().filter { it.pkg != pkg }
         prefs?.edit()?.putString("custom_apps", Gson().toJson(list))?.apply()
-    }
-
-    /** Endereços de pesquisa guardados; o título entra no lugar de {query}. */
-    fun customSites(): List<String> =
-        prefs?.getString("custom_sites", null)
-            ?.split("\n")?.map { it.trim() }?.filter { it.isNotEmpty() }
-            .orEmpty()
-
-    /** Devolve false se o endereço não for http(s) ou não tiver {query}. */
-    fun addCustomSite(template: String): Boolean {
-        val t = template.trim()
-        val okScheme = t.startsWith("https://") || t.startsWith("http://")
-        if (!okScheme || !hasPlaceholder(t)) return false
-        val list = (customSites() + t).distinct().take(8)
-        prefs?.edit()?.putString("custom_sites", list.joinToString("\n"))?.apply()
-        return true
-    }
-
-    fun removeCustomSite(template: String) {
-        val list = customSites().filter { it != template }
-        prefs?.edit()?.putString("custom_sites", list.joinToString("\n"))?.apply()
     }
 
     private val tmdbClient = OkHttpClient.Builder()

@@ -1,7 +1,5 @@
 package com.example.tvcatalog.ui
 
-import android.content.Intent
-import android.net.Uri
 import android.widget.Toast
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Canvas
@@ -145,7 +143,7 @@ private val ItemSaver: Saver<CatalogItem?, String> = Saver(
     save = { item -> if (item == null) "" else Gson().toJson(item) },
     restore = { json ->
         if (json.isEmpty()) null
-        else runCatching { Gson().fromJson(json, CatalogItem::class.java) }.getOrNull()
+        else runCatching { Gson().fromJson(json, CatalogItem::class.java)?.sanitized() }.getOrNull()
     },
 )
 
@@ -653,7 +651,7 @@ private fun SettingsScreen(vm: CatalogViewModel) {
 
     // Servidor local para receber a chave do telemóvel; só fica ativo neste ecrã.
     val server = remember { KeyServer(context) { k -> vm.saveKey(k); received = true } }
-    DisposableEffect(server) { onDispose { server.stop() } }
+    DisposableEffect(server) { onDispose { server.close() } }
     LaunchedEffect(server) {
         phoneUrl = withContext(Dispatchers.IO) { server.start() }
         phoneChecked = true
@@ -813,8 +811,7 @@ private fun AboutFooter() {
             color = StarGold,
         )
         Text(
-            "This product uses the TMDB API but is not endorsed or certified by TMDB. " +
-                "Availability data by JustWatch. Anime data by AniList.",
+            stringResource(R.string.attribution),
             style = MaterialTheme.typography.labelMedium,
             color = Grey,
             textAlign = TextAlign.Center,
@@ -857,7 +854,10 @@ private fun DetailScreen(item: CatalogItem) {
 
     // Apps de streaming que estão mesmo instaladas na TV.
     val installedApps = remember(item.key) {
-        ExternalOpen.allApps().filter { ExternalOpen.installedPackage(context, it) != null }
+        ExternalOpen.allApps()
+            .filter { ExternalOpen.installedPackage(context, it) != null }
+            // Uma app adicionada nas Definições pode ser a mesma que uma das fixas (ex.: Netflix).
+            .distinctBy { ExternalOpen.installedPackage(context, it) }
     }
 
     // Textos lidos aqui porque o conteúdo da LazyColumn não é @Composable.
@@ -971,7 +971,7 @@ private fun DetailScreen(item: CatalogItem) {
                     Text(stringResource(R.string.no_apps_found), color = Grey)
                 } else {
                     LazyRow(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                        items(installedApps, key = { it.label }) { app ->
+                        items(installedApps, key = { it.packages.joinToString() }) { app ->
                             PillButton(app.label, false) { openApp(app) }
                         }
                     }

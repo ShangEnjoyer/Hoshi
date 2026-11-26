@@ -80,14 +80,7 @@
     <string name="no_apps_found">Não foi encontrada nenhuma app compatível nesta TV (Stremio, Netflix, Prime Video, Disney+, Crunchyroll).</string>
     <string name="open_in_named">Abrir em %1$s</string>
     <string name="app_open_failed">Não foi possível abrir %1$s.</string>
-    <string name="open_on_web">Procurar num site</string>
-    <string name="web_youtube_trailer">YouTube (trailer)</string>
 
-    <string name="settings_sites_title">Sites para procurar</string>
-    <string name="settings_sites_help">Junta um endereço com marcadores onde deve entrar o título. Para ir direto ao título usa {imdb} ou {tmdb} (e {type} = movie/tv), por exemplo https://www.imdb.com/title/{imdb}/ ou https://www.themoviedb.org/{type}/{tmdb}. Para pesquisar usa {query}. Marcadores: {query} {title} {slug} {year} {imdb} {tmdb} {anilist} {type}. Os sites que precisam de um id que o título não tem ficam escondidos nesse título.</string>
-    <string name="settings_sites_placeholder">https://…/search?q={query}</string>
-    <string name="settings_sites_add">Adicionar site</string>
-    <string name="settings_sites_invalid">O endereço tem de começar por http:// ou https:// e conter um marcador como {query} ou {imdb}.</string>
     <string name="settings_sites_remove">Seleciona para remover</string>
     <string name="settings_apps_title">Apps para abrir títulos</string>
     <string name="settings_apps_help">Escolhe qualquer app instalada nesta TV para a juntar a Abrir numa app. Opcional: escreve primeiro uma ligação (marcadores como acima, ex.: stremio:///detail/{type}/{imdb}) e a app abre nessa ligação; sem ela, a app só abre.</string>

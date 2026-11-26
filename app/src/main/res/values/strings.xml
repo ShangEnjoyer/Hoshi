@@ -82,14 +82,7 @@
     <string name="no_apps_found">No supported app found on this TV (Stremio, Netflix, Prime Video, Disney+, Crunchyroll).</string>
     <string name="open_in_named">Open in %1$s</string>
     <string name="app_open_failed">Couldn\'t open %1$s.</string>
-    <string name="open_on_web">Search on a website</string>
-    <string name="web_youtube_trailer">YouTube (trailer)</string>
 
-    <string name="settings_sites_title">Websites to search</string>
-    <string name="settings_sites_help">Add a link with markers where the title goes. For a link straight to the title use {imdb} or {tmdb} (and {type} = movie/tv), e.g. https://www.imdb.com/title/{imdb}/ or https://www.themoviedb.org/{type}/{tmdb}. For a search use {query}. Markers: {query} {title} {slug} {year} {imdb} {tmdb} {anilist} {type}. Sites that need an id the title does not have are hidden for it.</string>
-    <string name="settings_sites_placeholder">https://…/search?q={query}</string>
-    <string name="settings_sites_add">Add website</string>
-    <string name="settings_sites_invalid">The address must start with http:// or https:// and contain a marker such as {query} or {imdb}.</string>
     <string name="settings_sites_remove">Select to remove</string>
     <string name="settings_apps_title">Apps to open titles in</string>
     <string name="settings_apps_help">Pick any app installed on this TV to add it to Open in app. Optional: type a link first (markers as below, e.g. stremio:///detail/{type}/{imdb}) and the app will be opened on that link; without one it just opens the app.</string>

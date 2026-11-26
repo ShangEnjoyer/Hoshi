@@ -28,11 +28,19 @@ class KeyServer(
     @Volatile
     private var server: ServerSocket? = null
 
+    /** Depois de fechado de vez (ecrã saiu), start() já não abre nada, mesmo que chegue atrasado. */
+    @Volatile
+    private var closed = false
+
     /** Abre o servidor e devolve o endereço para abrir no telemóvel, ou null se a TV não tiver rede. */
     fun start(): String? {
         stop()
         val ip = localIp() ?: return null
         val ss = bind() ?: return null
+        if (closed) {
+            runCatching { ss.close() }
+            return null
+        }
         server = ss
         thread(isDaemon = true, name = "key-server") {
             while (!ss.isClosed) {
@@ -44,6 +52,12 @@ class KeyServer(
             }
         }
         return "http://$ip:${ss.localPort}/$token"
+    }
+
+    /** Fecha de vez: usar quando o ecrã das Definições sai. */
+    fun close() {
+        closed = true
+        stop()
     }
 
     fun stop() {

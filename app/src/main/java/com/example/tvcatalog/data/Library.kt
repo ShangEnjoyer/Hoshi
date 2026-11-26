@@ -61,7 +61,7 @@ object Library {
         val json = p.getString(key, null) ?: return emptyList()
         return runCatching {
             val type = object : TypeToken<List<CatalogItem>>() {}.type
-            gson.fromJson<List<CatalogItem>>(json, type).orEmpty().filterNotNull()
+            gson.fromJson<List<CatalogItem>>(json, type).orEmpty().filterNotNull().map { it.sanitized() }
         }.getOrDefault(emptyList())
     }
 }
