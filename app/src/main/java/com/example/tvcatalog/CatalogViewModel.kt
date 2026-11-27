@@ -48,8 +48,14 @@ class CatalogViewModel : ViewModel() {
     private val _loading = MutableStateFlow(true)
     val loading: StateFlow<Boolean> = _loading.asStateFlow()
 
+    private val _loadError = MutableStateFlow(false)
+    val loadError: StateFlow<Boolean> = _loadError.asStateFlow()
+
     private val _searchResults = MutableStateFlow<List<CatalogItem>>(emptyList())
     val searchResults: StateFlow<List<CatalogItem>> = _searchResults.asStateFlow()
+
+    private val _searchError = MutableStateFlow(false)
+    val searchError: StateFlow<Boolean> = _searchError.asStateFlow()
 
     private val _missingKey = MutableStateFlow(!Repository.hasKey)
     val missingKey: StateFlow<Boolean> = _missingKey.asStateFlow()
@@ -112,8 +118,10 @@ class CatalogViewModel : ViewModel() {
                     throw e
                 } catch (e: HttpException) {
                     if (e.code() == 401 && def.tab != "anime") _keyInvalid.value = true
+                    _loadError.value = true
                     emptyList()
                 } catch (e: Exception) {
+                    _loadError.value = true
                     emptyList()
                 }
                 if (items.isNotEmpty()) {
@@ -142,6 +150,7 @@ class CatalogViewModel : ViewModel() {
         loadJobs.clear()
         _rows.value = emptyMap()
         _keyInvalid.value = false
+        _loadError.value = false
         _loading.value = true
         load()
     }
@@ -165,7 +174,13 @@ class CatalogViewModel : ViewModel() {
         if (_genreStates.value[tab]?.genres?.isNotEmpty() == true) return
         if (type != MediaType.ANIME && _missingKey.value) return
         viewModelScope.launch {
-            val list = runCatching { Repository.genres(type) }.getOrDefault(emptyList())
+            val list = try {
+                Repository.genres(type)
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                emptyList()
+            }
             if (list.isNotEmpty()) updateGenre(tab) { it.copy(genres = list) }
         }
     }
@@ -199,13 +214,25 @@ class CatalogViewModel : ViewModel() {
         viewModelScope.launch {
             val results = Repository.weekDays().map { day ->
                 async {
-                    var items = runCatching { Repository.airingOn(day) }.getOrNull()
+                    var items = try {
+                        Repository.airingOn(day)
+                    } catch (e: CancellationException) {
+                        throw e
+                    } catch (e: Exception) {
+                        null
+                    }
                     if (items == null) {
                         // O AniList limita pedidos seguidos: espera um pouco e tenta outra vez.
                         delay(2000)
-                        items = runCatching { Repository.airingOn(day) }.getOrDefault(emptyList())
+                        items = try {
+                            Repository.airingOn(day)
+                        } catch (e: CancellationException) {
+                            throw e
+                        } catch (e: Exception) {
+                            emptyList()
+                        }
                     }
-                    DayRow(day, items)
+                    DayRow(day, items.orEmpty())
                 }
             }.awaitAll()
             _weekRows.value = results.filter { it.items.isNotEmpty() }
@@ -219,11 +246,21 @@ class CatalogViewModel : ViewModel() {
         searchJob?.cancel()
         if (query.trim().length < 2) {
             _searchResults.value = emptyList()
+            _searchError.value = false
             return
         }
+        _searchError.value = false
         searchJob = viewModelScope.launch {
-            _searchResults.value = runCatching { Repository.search(query.trim()) }
-                .getOrDefault(emptyList())
+            try {
+                val result = Repository.search(query.trim())
+                _searchResults.value = result.items
+                _searchError.value = result.hasErrors
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                _searchResults.value = emptyList()
+                _searchError.value = true
+            }
         }
     }
 }

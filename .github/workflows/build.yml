@@ -21,14 +21,12 @@ jobs:
           java-version: 17
 
       - uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: "8.9"
 
       - name: Set up TMDB key
         run: echo "TMDB_API_KEY=${{ secrets.TMDB_API_KEY }}" > local.properties
 
-      - name: Build APK (debug)
-        run: gradle assembleDebug --stacktrace
+      - name: Test and build APK (debug)
+        run: bash ./gradlew testDebugUnitTest assembleDebug --stacktrace
 
       - name: Upload APK as artifact
         uses: actions/upload-artifact@v4

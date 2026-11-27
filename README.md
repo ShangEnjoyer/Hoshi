@@ -67,7 +67,7 @@ To attach the APK to a release, push a version tag such as `v1.5`.
 > **Do not set a `TMDB_API_KEY` secret for builds you share.** It would be embedded in the APK and anyone could extract
 > it. Leave it empty and enter the key in the app instead.
 
-Locally: open the folder in Android Studio and run it on a "Television (1080p)" emulator or a real TV.
+Locally: use `.\gradlew.bat testDebugUnitTest assembleDebug` on Windows, or `bash ./gradlew testDebugUnitTest assembleDebug` on macOS/Linux (JDK 17 and the Android SDK are required). You can also open the folder in Android Studio and run it on a "Television (1080p)" emulator or a real TV.
 
 ## Credits
 

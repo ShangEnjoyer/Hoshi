@@ -3,6 +3,7 @@ package com.example.tvcatalog.data
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
+import android.os.SystemClock
 import android.text.TextUtils
 import com.example.tvcatalog.R
 import java.net.Inet4Address
@@ -11,19 +12,37 @@ import java.net.ServerSocket
 import java.net.Socket
 import java.net.URLDecoder
 import java.security.SecureRandom
+import java.util.Base64
 import kotlin.concurrent.thread
+
+internal fun newPairingToken(random: SecureRandom = SecureRandom()): String {
+    val bytes = ByteArray(24)
+    random.nextBytes(bytes)
+    return Base64.getUrlEncoder().withoutPadding().encodeToString(bytes)
+}
+
+internal fun parseTmdbKey(body: String): String? {
+    val raw = body.split("&").firstOrNull { it.startsWith("key=") }?.removePrefix("key=") ?: return null
+    val key = runCatching { URLDecoder.decode(raw, "UTF-8") }.getOrNull()?.trim() ?: return null
+    return key.takeIf { Regex("^[A-Za-z0-9]{32}$").matches(it) }
+}
 
 /**
  * Pequeno servidor web local, ativo só enquanto o ecrã de Definições está aberto.
  * Permite colar a chave do TMDB no telemóvel (mesma rede Wi-Fi) em vez de a escrever com o comando.
- * O endereço leva um código aleatório, por isso outros aparelhos na rede não o adivinham.
+ * O endereço usa um token temporário de uso único para reduzir o risco de acesso por outros aparelhos.
  */
 class KeyServer(
     context: Context,
     private val onKey: (String) -> Unit,
 ) {
     private val context = context.applicationContext
-    private val token = randomToken()
+    private val token = newPairingToken()
+    private val pairingLock = Any()
+
+    private var expiresAt = 0L
+    private var attempts = 0
+    private var tokenConsumed = false
 
     @Volatile
     private var server: ServerSocket? = null
@@ -40,6 +59,11 @@ class KeyServer(
         if (closed) {
             runCatching { ss.close() }
             return null
+        }
+        synchronized(pairingLock) {
+            expiresAt = SystemClock.elapsedRealtime() + TOKEN_TTL_MS
+            attempts = 0
+            tokenConsumed = false
         }
         server = ss
         thread(isDaemon = true, name = "key-server") {
@@ -109,7 +133,7 @@ class KeyServer(
 
                     val out = s.getOutputStream()
                     when {
-                        method == "GET" && path == "/$token" -> send(out, 200, formPage())
+                        method == "GET" && path == "/$token" && tokenIsActive() -> send(out, 200, formPage())
                         method == "POST" && path == "/$token" -> {
                             val buf = CharArray(length.coerceIn(0, 2000))
                             var read = 0
@@ -118,9 +142,11 @@ class KeyServer(
                                 if (n < 0) break
                                 read += n
                             }
-                            val key = parseKey(String(buf, 0, read))
-                            if (key != null) {
-                                Handler(Looper.getMainLooper()).post { onKey(key) }
+                            val key = parseTmdbKey(String(buf, 0, read))
+                            val acceptedKey = submitKey(key)
+                            if (acceptedKey != null) {
+                                Handler(Looper.getMainLooper()).post { onKey(acceptedKey) }
+                                stop()
                                 send(out, 200, messagePage(context.getString(R.string.phone_page_ok), back = false))
                             } else {
                                 send(out, 400, messagePage(context.getString(R.string.phone_page_bad), back = true))
@@ -134,11 +160,21 @@ class KeyServer(
         }
     }
 
-    /** Lê "key=..." do formulário e só aceita algo com ar de chave (letras e números, 20-64 caracteres). */
-    private fun parseKey(body: String): String? {
-        val raw = body.split("&").firstOrNull { it.startsWith("key=") }?.removePrefix("key=") ?: return null
-        val key = runCatching { URLDecoder.decode(raw, "UTF-8") }.getOrNull()?.trim() ?: return null
-        return key.takeIf { Regex("^[A-Za-z0-9]{20,64}$").matches(it) }
+    private fun tokenIsActive(): Boolean = synchronized(pairingLock) {
+        !closed && !tokenConsumed && attempts < MAX_ATTEMPTS &&
+            SystemClock.elapsedRealtime() < expiresAt
+    }
+
+    private fun submitKey(key: String?): String? = synchronized(pairingLock) {
+        if (closed || tokenConsumed || attempts >= MAX_ATTEMPTS ||
+            SystemClock.elapsedRealtime() >= expiresAt
+        ) {
+            return@synchronized null
+        }
+        attempts++
+        if (key == null) return@synchronized null
+        tokenConsumed = true
+        key
     }
 
     private fun send(out: java.io.OutputStream, code: Int, html: String) {
@@ -188,9 +224,8 @@ class KeyServer(
             "</body></html>"
     }
 
-    private fun randomToken(): String {
-        val chars = "abcdefghjkmnpqrstuvwxyz23456789"
-        val r = SecureRandom()
-        return (1..6).map { chars[r.nextInt(chars.length)] }.joinToString("")
+    companion object {
+        private const val TOKEN_TTL_MS = 5 * 60 * 1000L
+        private const val MAX_ATTEMPTS = 5
     }
 }

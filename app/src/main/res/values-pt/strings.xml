@@ -25,6 +25,7 @@
     <string name="msg_load_error">Não foi possível carregar o catálogo. Verifica a ligação à internet.</string>
 
     <string name="search_placeholder">Pesquisar filmes, séries e animes…</string>
+    <string name="search_error">Não foi possível carregar alguns resultados. Verifica a ligação e tenta novamente.</string>
 
     <string name="settings_title">Chave da API do TMDB</string>
     <string name="settings_help">Necessária para filmes e séries (os animes funcionam sem chave). Cria uma conta grátis em themoviedb.org, vai a Definições → API e copia a \"API Key\" (v3).</string>
@@ -55,6 +56,7 @@
 
     <string name="settings_phone_title">Mais fácil: usa o telemóvel</string>
     <string name="settings_phone_help">Lê o código QR, ou abre o endereço abaixo num telemóvel ligado ao mesmo Wi-Fi, e cola lá a tua chave do TMDB. É guardada aqui automaticamente.</string>
+    <string name="settings_phone_security_warning">A ligação expira ao fim de cinco minutos e só funciona uma vez. O HTTP local não é encriptado; usa apenas numa rede Wi-Fi de confiança.</string>
     <string name="settings_phone_received">Chave recebida do telemóvel e guardada. Vai a Filmes ou Séries.</string>
     <string name="settings_phone_noip">Liga a TV ao Wi-Fi ou à rede para usar o telemóvel.</string>
     <string name="phone_page_title">Hoshi · Chave do TMDB</string>

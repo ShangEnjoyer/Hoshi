@@ -27,6 +27,7 @@
     <string name="msg_load_error">Couldn\'t load the catalog. Check your internet connection.</string>
 
     <string name="search_placeholder">Search movies, TV shows and anime…</string>
+    <string name="search_error">Some search results could not be loaded. Check your connection and try again.</string>
 
     <string name="settings_title">TMDB API key</string>
     <string name="settings_help">Required for movies and TV shows (anime works without a key). Create a free account at themoviedb.org, go to Settings → API and copy the \"API Key\" (v3).</string>
@@ -57,6 +58,7 @@
 
     <string name="settings_phone_title">Easiest: use your phone</string>
     <string name="settings_phone_help">Scan the QR code, or open the address below on a phone on the same Wi-Fi, and paste your TMDB key there. It is saved here automatically.</string>
+    <string name="settings_phone_security_warning">The link expires after five minutes and works once. This local HTTP connection is not encrypted; use only on trusted Wi-Fi.</string>
     <string name="settings_phone_received">Key received from your phone and saved. Go to Movies or TV Shows.</string>
     <string name="settings_phone_noip">Connect the TV to your Wi-Fi or network to use your phone.</string>
     <string name="phone_page_title">Hoshi · TMDB key</string>

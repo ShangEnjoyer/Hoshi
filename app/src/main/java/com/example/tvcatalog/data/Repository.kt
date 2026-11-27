@@ -6,6 +6,7 @@ import com.example.tvcatalog.BuildConfig
 import com.example.tvcatalog.R
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope
@@ -26,6 +27,8 @@ import java.time.temporal.WeekFields
 import java.util.Locale
 
 object Repository {
+
+    data class SearchResult(val items: List<CatalogItem>, val hasErrors: Boolean)
 
     private const val POSTER = "https://image.tmdb.org/t/p/w342"
     private const val BACKDROP = "https://image.tmdb.org/t/p/w1280"
@@ -269,20 +272,38 @@ object Repository {
 
     // ---------- Pesquisa e disponibilidade ----------
 
-    suspend fun search(q: String): List<CatalogItem> = coroutineScope {
-        val t = async {
-            runCatching {
-                tmdb.search(q).results.orEmpty().mapNotNull {
+    suspend fun search(q: String): SearchResult = coroutineScope {
+        val t = async<Result<List<CatalogItem>>> {
+            try {
+                Result.success(tmdb.search(q).results.orEmpty().mapNotNull {
                     when (it.mediaType) {
                         "movie" -> it.toCatalog(MediaType.MOVIE)
                         "tv" -> it.toCatalog(MediaType.TV)
                         else -> null
                     }
-                }
-            }.getOrDefault(emptyList())
+                })
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                Result.failure(e)
+            }
         }
-        val a = async { runCatching { anime("SEARCH_MATCH", q) }.getOrDefault(emptyList()) }
-        (t.await() + a.await()).distinctBy { it.key }
+        val a = async<Result<List<CatalogItem>>> {
+            try {
+                Result.success(anime("SEARCH_MATCH", q))
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                Result.failure(e)
+            }
+        }
+        val tmdbResults = t.await()
+        val animeResults = a.await()
+        SearchResult(
+            items = (tmdbResults.getOrDefault(emptyList()) + animeResults.getOrDefault(emptyList()))
+                .distinctBy { it.key },
+            hasErrors = tmdbResults.isFailure || animeResults.isFailure,
+        )
     }
 
     // ---------- Géneros ----------

@@ -5,6 +5,7 @@
     <string name="msg_loading">Carregando…</string>
     <string name="msg_missing_key">Falta a chave da API do TMDB. Vá para a aba Configurações para colocá-la.</string>
     <string name="msg_load_error">Não foi possível carregar o catálogo. Verifique sua conexão com a internet.</string>
+    <string name="search_error">Não foi possível carregar alguns resultados. Verifique sua conexão e tente novamente.</string>
 
 
     <string name="settings_help">Necessária para filmes e séries (os animes funcionam sem chave). Crie uma conta grátis em themoviedb.org, vá em Configurações → API e copie a \"API Key\" (v3).</string>
@@ -25,7 +26,8 @@
     <string name="attribution">Dados: TMDB (disponibilidade: JustWatch) e AniList. Este app usa a API do TMDB, mas não é endossado nem certificado pelo TMDB.</string>
 
     <string name="settings_phone_title">Mais fácil: use o celular</string>
-    <string name="settings_phone_help">Escaneie o QR code, ou abra o endereço abaixo em um celular no mesmo Wi-Fi, e cole lá a sua chave do TMDB. Ela é salva aqui automaticamente.</string>
+    <string name="settings_phone_help">Escaneie o QR code ou abra o endereço abaixo em um celular no mesmo Wi-Fi e cole sua chave do TMDB. Ela é salva aqui automaticamente.</string>
+    <string name="settings_phone_security_warning">O link expira em cinco minutos e funciona uma vez. A conexão HTTP local não é criptografada; use apenas em uma rede Wi-Fi confiável.</string>
     <string name="settings_phone_received">Chave recebida do celular e salva. Vá para Filmes ou Séries.</string>
     <string name="settings_phone_noip">Conecte a TV ao Wi-Fi ou à rede para usar o celular.</string>
     <string name="phone_page_title">Hoshi · Chave do TMDB</string>

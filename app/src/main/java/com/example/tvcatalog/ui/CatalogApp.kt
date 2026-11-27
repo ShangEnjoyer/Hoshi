@@ -97,6 +97,7 @@ import com.example.tvcatalog.data.sanitized
 import com.google.gson.Gson
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.qrcode.QRCodeWriter
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
@@ -153,6 +154,7 @@ private val ItemSaver: Saver<CatalogItem?, String> = Saver(
 fun CatalogApp(vm: CatalogViewModel = viewModel()) {
     val rows by vm.rows.collectAsState()
     val loading by vm.loading.collectAsState()
+    val loadError by vm.loadError.collectAsState()
     val missingKey by vm.missingKey.collectAsState()
     val keyInvalid by vm.keyInvalid.collectAsState()
     var selected by rememberSaveable(stateSaver = ItemSaver) { mutableStateOf<CatalogItem?>(null) }
@@ -223,13 +225,20 @@ fun CatalogApp(vm: CatalogViewModel = viewModel()) {
                                 loading = loading,
                                 missingKey = missingKey,
                                 keyInvalid = keyInvalid,
+                                loadError = loadError,
                                 tabKey = "home",
                                 memory = memory,
                                 onClick = { selected = it },
                             )
-                            1 -> CategoryScreen(vm, "movies", movies, loading, missingKey, keyInvalid, memory) { selected = it }
-                            2 -> CategoryScreen(vm, "tv", tv, loading, missingKey, keyInvalid, memory) { selected = it }
-                            3 -> CategoryScreen(vm, "anime", anime, loading, false, false, memory) { selected = it }
+                            1 -> CategoryScreen(
+                                vm, "movies", movies, loading, missingKey, keyInvalid, loadError, memory,
+                            ) { selected = it }
+                            2 -> CategoryScreen(
+                                vm, "tv", tv, loading, missingKey, keyInvalid, loadError, memory,
+                            ) { selected = it }
+                            3 -> CategoryScreen(
+                                vm, "anime", anime, loading, false, false, loadError, memory,
+                            ) { selected = it }
                             4 -> WeekScreen(vm, memory, onClick = { selected = it })
                             5 -> MyListScreen(memory) { selected = it }
                             6 -> SearchScreen(vm, memory, onClick = { selected = it })
@@ -253,6 +262,7 @@ private fun RowsScreen(
     onClick: (CatalogItem) -> Unit,
     emptyRes: Int? = null,
     header: (@Composable () -> Unit)? = null,
+    loadError: Boolean = false,
 ) {
     if (rows.isEmpty()) {
         Box(Modifier.fillMaxSize().padding(48.dp)) {
@@ -272,6 +282,11 @@ private fun RowsScreen(
         contentPadding = PaddingValues(horizontal = 48.dp, vertical = 16.dp),
         verticalArrangement = Arrangement.spacedBy(20.dp),
     ) {
+        if (loadError && !loading && rows.isNotEmpty()) {
+            item(key = "load-error") {
+                Text(stringResource(R.string.msg_load_error), color = Grey)
+            }
+        }
         if (header != null) {
             item(key = "header") { header() }
         }
@@ -305,6 +320,7 @@ private fun CategoryScreen(
     loading: Boolean,
     missingKey: Boolean,
     keyInvalid: Boolean,
+    loadError: Boolean,
     memory: NavMemory,
     onClick: (CatalogItem) -> Unit,
 ) {
@@ -322,6 +338,7 @@ private fun CategoryScreen(
         RowsScreen(
             rows, loading, missingKey, keyInvalid, tabKey, memory, onClick,
             header = if (gs.genres.isEmpty()) null else chips,
+            loadError = loadError,
         )
     } else {
         Column(Modifier.fillMaxSize().padding(horizontal = 48.dp, vertical = 16.dp)) {
@@ -578,6 +595,7 @@ private fun WeekList(rows: List<CatalogViewModel.DayRow>, memory: NavMemory, onC
 private fun SearchScreen(vm: CatalogViewModel, memory: NavMemory, onClick: (CatalogItem) -> Unit) {
     var q by remember { mutableStateOf(memory.query) }
     val results by vm.searchResults.collectAsState()
+    val searchError by vm.searchError.collectAsState()
 
     LaunchedEffect(q) {
         // Ao voltar de um detalhe, mantém os resultados em vez de pesquisar outra vez.
@@ -596,6 +614,13 @@ private fun SearchScreen(vm: CatalogViewModel, memory: NavMemory, onClick: (Cata
             onDone = { vm.search(q) },
         )
         Spacer(Modifier.height(16.dp))
+        if (searchError) {
+            Text(
+                stringResource(R.string.search_error),
+                style = MaterialTheme.typography.titleMedium,
+                color = Grey,
+            )
+        }
         LazyVerticalGrid(
             state = memory.grid,
             columns = GridCells.Adaptive(150.dp),
@@ -674,6 +699,11 @@ private fun SettingsScreen(vm: CatalogViewModel) {
                 Text(
                     stringResource(R.string.settings_phone_help),
                     style = MaterialTheme.typography.bodyMedium,
+                    color = Grey,
+                )
+                Text(
+                    stringResource(R.string.settings_phone_security_warning),
+                    style = MaterialTheme.typography.bodySmall,
                     color = Grey,
                 )
                 val url = phoneUrl
@@ -867,14 +897,24 @@ private fun DetailScreen(item: CatalogItem) {
     val sMore = stringResource(R.string.section_more_links)
 
     LaunchedEffect(item.key) {
-        runCatching { Repository.availability(item) }
-            .onSuccess { availability = it }
-            .onFailure { failed = true }
+        try {
+            availability = Repository.availability(item)
+        } catch (e: CancellationException) {
+            throw e
+        } catch (e: Exception) {
+            failed = true
+        }
     }
 
     // O id do IMDb permite ao Stremio abrir exatamente este título (senão pesquisa pelo nome).
     LaunchedEffect(item.key) {
-        imdbId = runCatching { Repository.imdbId(item) }.getOrNull()
+        imdbId = try {
+            Repository.imdbId(item)
+        } catch (e: CancellationException) {
+            throw e
+        } catch (e: Exception) {
+            null
+        }
     }
 
     val openUrl: (String) -> Unit = { url ->
